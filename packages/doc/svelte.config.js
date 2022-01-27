@@ -1,10 +1,39 @@
 // @ts-check
 
 import adapter from "@sveltejs/adapter-static";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
 import vue from "@vitejs/plugin-vue";
 import { spawn } from "child_process";
+import { mdsvex } from "mdsvex";
+import shiki from "shiki";
 import preprocess from "svelte-preprocess";
 import WindiCSS from "vite-plugin-windicss";
+
+/**
+ * @param {string} html
+ */
+function htmlToSvelte(html) {
+  return `{@html \`${html.replace(/`/g, "\\`")}\`}`;
+}
+
+const processorGroup = mdsvex({
+  highlight: {
+    highlighter: async (code, lang) => {
+      if (
+        shiki.BUNDLED_LANGUAGES.some(
+          ({ id, aliases }) => id === lang || aliases?.includes(lang)
+        )
+      ) {
+        const highlighter = await shiki.getHighlighter({
+          theme: "dracula",
+        });
+        return htmlToSvelte(highlighter.codeToHtml(code, { lang }));
+      } else {
+        return "<pre><code>{`" + code.replace(/`/g, "\\`") + "`}</code></pre>";
+      }
+    },
+  },
+});
 
 await new Promise((resolve) => {
   const genCode = spawn("pnpm", ["gen-code"]);
@@ -25,7 +54,21 @@ const config = {
     },
     target: "#svelte",
     vite: {
-      plugins: [WindiCSS(), vue()],
+      plugins: [
+        WindiCSS(),
+        vue(),
+        svelte({
+          compilerOptions: {
+            hydratable: true,
+          },
+          extensions: [".svx"],
+          preprocess: {
+            ...processorGroup,
+            markup: ({ content, filename }) =>
+              processorGroup.markup({ content, filename: filename || "" }),
+          },
+        }),
+      ],
     },
   },
 };

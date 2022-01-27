@@ -16,6 +16,7 @@
   "devDependencies": {
     "@sveltejs/adapter-static": "^1.0.0-next.26",
     "@sveltejs/kit": "^1.0.0-next.240",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.35",
     "@types/html-escaper": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
@@ -24,6 +25,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^3.2.1",
     "html-escaper": "^3.0.3",
+    "mdsvex": "^0.9.8",
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0",
     "svelte": "^3.44.0",

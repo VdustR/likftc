@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<link rel="icon" href="/likftc/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" data-svelte="svelte-1qzpree"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" data-svelte="svelte-1qzpree"><link href="https://fonts.googleapis.com/css2?family=Gidugu&display=swap" rel="stylesheet" data-svelte="svelte-1qzpree"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/victormono@latest/dist/index.min.css" data-svelte="svelte-1qzpree">
+	<link rel="stylesheet" href="/likftc/_app/assets/pages/__layout.svelte-4942ef8d.css">
+	<link rel="stylesheet" href="/likftc/_app/assets/pages/vue.svelte-9b0bb35f.css">
+	<link rel="stylesheet" href="/likftc/_app/assets/Demo-93b36e28.css">
+	<link rel="modulepreload" href="/likftc/_app/start-4eb33981.js">
+	<link rel="modulepreload" href="/likftc/_app/chunks/vendor-41529c01.js">
+	<link rel="modulepreload" href="/likftc/_app/chunks/paths-4b3c6e7e.js">
+	<link rel="modulepreload" href="/likftc/_app/pages/__layout.svelte-1d3e4887.js">
+	<link rel="modulepreload" href="/likftc/_app/chunks/index-80948b27.js">
+	<link rel="modulepreload" href="/likftc/_app/pages/vue.svelte-da8279c9.js">
+	<link rel="modulepreload" href="/likftc/_app/chunks/Demo-c3e45933.js">
+			<script type="module">
+				import { start } from "/likftc/_app/start-4eb33981.js";
+				start({
+					target: document.querySelector("#svelte"),
+					paths: {"base":"/likftc","assets":"/likftc"},
+					session: {},
+					route: true,
+					spa: false,
+					trailing_slash: "never",
+					hydrate: {
+						status: 200,
+						error: null,
+						nodes: [
+							import("/likftc/_app/pages/__layout.svelte-1d3e4887.js"),
+						import("/likftc/_app/pages/vue.svelte-da8279c9.js")
+						],
+						url: new URL("http://sveltekit-prerender/likftc/vue"),
+						params: {}
+					}
+				});
+			</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+
+
+<div class="outer svelte-12plu3j"><nav class="svelte-12plu3j"><a href="/likftc"><h1 class="svelte-12plu3j">likftc</h1></a>
+    <ul class="svelte-12plu3j"><li class="svelte-12plu3j"><a href="/likftc/svelte/">Svelte</a>
+        </li><li class="svelte-12plu3j"><a href="/likftc/vue/">Vue</a>
+        </li><li class="svelte-12plu3j"><a href="/likftc/react/">React</a>
+        </li></ul></nav>
+  <main class="svelte-12plu3j"><h1 class="mr-auto ml-auto mt-6 mb-4 text-size-3rem">Vue Demo</h1>
+
+<div class="grid svelte-1k6c2ck"><div class="with svelte-1k6c2ck"><h3 class="svelte-1k6c2ck">With likftc</h3>
+    <div class="demo svelte-1k6c2ck"><div slot="with"></div>
+      <button class="svelte-1k6c2ck"><svg width="1em" height="1em" viewBox="0 0 24 24"><path d="M4.996 5h5v5h-1V6.493a6.502 6.502 0 0 0 2.504 12.5a6.5 6.5 0 0 0 1.496-12.827V5.142A7.5 7.5 0 1 1 7.744 6H4.996V5z" fill="currentColor"></path></svg></button></div></div>
+  <div class="code code-with svelte-1k6c2ck"><!-- HTML_TAG_START --><pre class="shiki" style="background-color: #282A36"><code><span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #FF79C6">script</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">lang</span><span style="color: #F8F8F2">=</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">ts</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">setup</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #50FA7B; font-style: italic">import</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">Likftc</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">from</span><span style="color: #F8F8F2"> </span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">@vdustr/likftc</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #50FA7B; font-style: italic">import</span><span style="color: #F8F8F2"> { </span><span style="color: #50FA7B; font-style: italic">computed</span><span style="color: #F8F8F2">, </span><span style="color: #50FA7B; font-style: italic">watch</span><span style="color: #F8F8F2"> } </span><span style="color: #50FA7B; font-style: italic">from</span><span style="color: #F8F8F2"> </span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">vue</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #50FA7B; font-style: italic">import</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">useFrame</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">from</span><span style="color: #F8F8F2"> </span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">./useFrame</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #50FA7B; font-style: italic">function</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">itemToKey</span><span style="color: #F8F8F2">(</span><span style="color: #50FA7B; font-style: italic">item:</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">number</span><span style="color: #F8F8F2">) {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #50FA7B; font-style: italic">return</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">String</span><span style="color: #F8F8F2">(</span><span style="color: #50FA7B; font-style: italic">item</span><span style="color: #F8F8F2">);</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"><span style="color: #50FA7B; font-style: italic">let</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">frame</span><span style="color: #F8F8F2"> = </span><span style="color: #50FA7B; font-style: italic">useFrame</span><span style="color: #F8F8F2">();</span></span>
+<span class="line"><span style="color: #50FA7B; font-style: italic">const</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">keys</span><span style="color: #F8F8F2"> = </span><span style="color: #50FA7B; font-style: italic">computed</span><span style="color: #F8F8F2">(() =&gt; </span><span style="color: #50FA7B; font-style: italic">frame</span><span style="color: #F8F8F2">.</span><span style="color: #50FA7B; font-style: italic">value</span><span style="color: #F8F8F2">.</span><span style="color: #50FA7B; font-style: italic">map</span><span style="color: #F8F8F2">(</span><span style="color: #50FA7B; font-style: italic">itemToKey</span><span style="color: #F8F8F2">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #50FA7B; font-style: italic">const</span><span style="color: #F8F8F2"> { </span><span style="color: #50FA7B; font-style: italic">get</span><span style="color: #F8F8F2">, </span><span style="color: #50FA7B; font-style: italic">sync</span><span style="color: #F8F8F2"> } = </span><span style="color: #50FA7B; font-style: italic">Likftc</span><span style="color: #F8F8F2">(</span><span style="color: #50FA7B; font-style: italic">keys</span><span style="color: #F8F8F2">.</span><span style="color: #50FA7B; font-style: italic">value</span><span style="color: #F8F8F2">);</span></span>
+<span class="line"><span style="color: #50FA7B; font-style: italic">watch</span><span style="color: #F8F8F2">(</span><span style="color: #50FA7B; font-style: italic">keys</span><span style="color: #F8F8F2">, () =&gt; {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #50FA7B; font-style: italic">sync</span><span style="color: #F8F8F2">(</span><span style="color: #50FA7B; font-style: italic">keys</span><span style="color: #F8F8F2">.</span><span style="color: #50FA7B; font-style: italic">value</span><span style="color: #F8F8F2">);</span></span>
+<span class="line"><span style="color: #F8F8F2">});</span></span>
+<span class="line"><span style="color: #F8F8F2">&lt;/</span><span style="color: #FF79C6">script</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #FF79C6">template</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  &lt;</span><span style="color: #50FA7B; font-style: italic">transition-group</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">name</span><span style="color: #F8F8F2">=</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">list-complete</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">tag</span><span style="color: #F8F8F2">=</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">ul</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #50FA7B; font-style: italic">li</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #50FA7B; font-style: italic">v-for</span><span style="color: #F8F8F2">=</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">item in frame</span><span style="color: #E9F284">&quot;</span></span>
+<span class="line"><span style="color: #F8F8F2">      :</span><span style="color: #50FA7B; font-style: italic">key</span><span style="color: #F8F8F2">=</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">get(itemToKey(item))</span><span style="color: #E9F284">&quot;</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #50FA7B; font-style: italic">class</span><span style="color: #F8F8F2">=</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">list-complete-item</span><span style="color: #E9F284">&quot;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      {{ </span><span style="color: #50FA7B; font-style: italic">item</span><span style="color: #F8F8F2"> }}</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #50FA7B; font-style: italic">li</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  &lt;/</span><span style="color: #50FA7B; font-style: italic">transition-group</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">&lt;/</span><span style="color: #FF79C6">template</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #FF79C6">style</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">scoped</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">lang</span><span style="color: #F8F8F2">=</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">css</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">src</span><span style="color: #F8F8F2">=</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">./style.css</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">&gt;&lt;/</span><span style="color: #FF79C6">style</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span></code></pre><!-- HTML_TAG_END --></div>
+  <div class="without svelte-1k6c2ck"><h3 class="svelte-1k6c2ck">Without likftc</h3>
+    <div class="demo svelte-1k6c2ck"><div slot="without"></div>
+      <button class="svelte-1k6c2ck"><svg width="1em" height="1em" viewBox="0 0 24 24"><path d="M4.996 5h5v5h-1V6.493a6.502 6.502 0 0 0 2.504 12.5a6.5 6.5 0 0 0 1.496-12.827V5.142A7.5 7.5 0 1 1 7.744 6H4.996V5z" fill="currentColor"></path></svg></button></div></div>
+  <div class="code code-without svelte-1k6c2ck"><!-- HTML_TAG_START --><pre class="shiki" style="background-color: #282A36"><code><span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #FF79C6">script</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">lang</span><span style="color: #F8F8F2">=</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">ts</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">setup</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #50FA7B; font-style: italic">import</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">useFrame</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">from</span><span style="color: #F8F8F2"> </span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">./useFrame</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #50FA7B; font-style: italic">const</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">frame</span><span style="color: #F8F8F2"> = </span><span style="color: #50FA7B; font-style: italic">useFrame</span><span style="color: #F8F8F2">();</span></span>
+<span class="line"><span style="color: #F8F8F2">&lt;/</span><span style="color: #FF79C6">script</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #FF79C6">template</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  &lt;</span><span style="color: #50FA7B; font-style: italic">transition-group</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">name</span><span style="color: #F8F8F2">=</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">list-complete</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">tag</span><span style="color: #F8F8F2">=</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">ul</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #50FA7B; font-style: italic">li</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">v-for</span><span style="color: #F8F8F2">=</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">item in frame</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2"> :</span><span style="color: #50FA7B; font-style: italic">key</span><span style="color: #F8F8F2">=</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">item</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">class</span><span style="color: #F8F8F2">=</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">list-complete-item</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      {{ </span><span style="color: #50FA7B; font-style: italic">item</span><span style="color: #F8F8F2"> }}</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #50FA7B; font-style: italic">li</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  &lt;/</span><span style="color: #50FA7B; font-style: italic">transition-group</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">&lt;/</span><span style="color: #FF79C6">template</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #FF79C6">style</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">scoped</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">lang</span><span style="color: #F8F8F2">=</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">css</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">src</span><span style="color: #F8F8F2">=</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">./style.css</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">&gt;&lt;/</span><span style="color: #FF79C6">style</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span></code></pre><!-- HTML_TAG_END --></div>
+</div></main></div>
+
+<footer class="svelte-12plu3j"><span>Copyright © 2022  
+    <a href="https://vdustr.github.io" target="_blank" rel="noopener noreferrer" class="svelte-12plu3j">ViPro</a>
+    .</span>
+</footer>
+
+</div>
+	</body>
+</html>

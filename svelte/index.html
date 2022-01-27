@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<link rel="icon" href="/likftc/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" data-svelte="svelte-1qzpree"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" data-svelte="svelte-1qzpree"><link href="https://fonts.googleapis.com/css2?family=Gidugu&display=swap" rel="stylesheet" data-svelte="svelte-1qzpree"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/victormono@latest/dist/index.min.css" data-svelte="svelte-1qzpree">
+	<link rel="stylesheet" href="/likftc/_app/assets/pages/__layout.svelte-4942ef8d.css">
+	<link rel="stylesheet" href="/likftc/_app/assets/Demo-93b36e28.css">
+	<link rel="modulepreload" href="/likftc/_app/start-4eb33981.js">
+	<link rel="modulepreload" href="/likftc/_app/chunks/vendor-41529c01.js">
+	<link rel="modulepreload" href="/likftc/_app/chunks/paths-4b3c6e7e.js">
+	<link rel="modulepreload" href="/likftc/_app/pages/__layout.svelte-1d3e4887.js">
+	<link rel="modulepreload" href="/likftc/_app/chunks/index-80948b27.js">
+	<link rel="modulepreload" href="/likftc/_app/pages/svelte.svelte-699ff7a3.js">
+	<link rel="modulepreload" href="/likftc/_app/chunks/Demo-c3e45933.js">
+			<script type="module">
+				import { start } from "/likftc/_app/start-4eb33981.js";
+				start({
+					target: document.querySelector("#svelte"),
+					paths: {"base":"/likftc","assets":"/likftc"},
+					session: {},
+					route: true,
+					spa: false,
+					trailing_slash: "never",
+					hydrate: {
+						status: 200,
+						error: null,
+						nodes: [
+							import("/likftc/_app/pages/__layout.svelte-1d3e4887.js"),
+						import("/likftc/_app/pages/svelte.svelte-699ff7a3.js")
+						],
+						url: new URL("http://sveltekit-prerender/likftc/svelte"),
+						params: {}
+					}
+				});
+			</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+
+
+<div class="outer svelte-12plu3j"><nav class="svelte-12plu3j"><a href="/likftc"><h1 class="svelte-12plu3j">likftc</h1></a>
+    <ul class="svelte-12plu3j"><li class="svelte-12plu3j"><a href="/likftc/svelte/">Svelte</a>
+        </li><li class="svelte-12plu3j"><a href="/likftc/vue/">Vue</a>
+        </li><li class="svelte-12plu3j"><a href="/likftc/react/">React</a>
+        </li></ul></nav>
+  <main class="svelte-12plu3j"><h1 class="mr-auto ml-auto mt-6 mb-4 text-size-3rem">Svelte Demo</h1>
+
+<div class="grid svelte-1k6c2ck"><div class="with svelte-1k6c2ck"><h3 class="svelte-1k6c2ck">With likftc</h3>
+    <div class="demo svelte-1k6c2ck"><div slot="with"></div>
+      <button class="svelte-1k6c2ck"><svg width="1em" height="1em" viewBox="0 0 24 24"><path d="M4.996 5h5v5h-1V6.493a6.502 6.502 0 0 0 2.504 12.5a6.5 6.5 0 0 0 1.496-12.827V5.142A7.5 7.5 0 1 1 7.744 6H4.996V5z" fill="currentColor"></path></svg></button></div></div>
+  <div class="code code-with svelte-1k6c2ck"><!-- HTML_TAG_START --><pre class="shiki" style="background-color: #282A36"><code><span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #FF79C6">script</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">lang</span><span style="color: #FF79C6">=</span><span style="color: #F8F8F2">&quot;</span><span style="color: #50FA7B; font-style: italic">ts</span><span style="color: #F8F8F2">&quot;&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  import Likftc from &quot;@vdustr/likftc&quot;;</span></span>
+<span class="line"><span style="color: #F8F8F2">  import { flip } from &quot;svelte/animate&quot;;</span></span>
+<span class="line"><span style="color: #F8F8F2">  import { fade } from &quot;svelte/transition&quot;;</span></span>
+<span class="line"><span style="color: #F8F8F2">  import useFrame from &quot;./useFrame&quot;;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  let frame = useFrame();</span></span>
+<span class="line"><span style="color: #F8F8F2">  const { get, sync } = Likftc($frame);</span></span>
+<span class="line"><span style="color: #F8F8F2">  $: {</span></span>
+<span class="line"><span style="color: #F8F8F2">    sync($frame);</span></span>
+<span class="line"><span style="color: #F8F8F2">  }</span></span>
+<span class="line"><span style="color: #F8F8F2">&lt;/</span><span style="color: #FF79C6">script</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #FF79C6">ul</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  {</span><span style="color: #FF79C6">#each</span><span style="color: #F8F8F2"> $frame </span><span style="color: #FF79C6">as</span><span style="color: #F8F8F2"> item (get(item))}</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #FF79C6">li</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #FF79C6">animate:</span><span style="color: #F8F8F2">flip</span><span style="color: #FF79C6">=</span><span style="color: #F1FA8C">{{</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">duration</span><span style="color: #F8F8F2">: 1000 }}</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #FF79C6">transition:</span><span style="color: #8BE9FD; font-style: italic">fade</span><span style="color: #F8F8F2">|</span><span style="color: #8BE9FD">local</span><span style="color: #FF79C6">=</span><span style="color: #F1FA8C">{{</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">duration</span><span style="color: #F8F8F2">: 1000 }}</span></span>
+<span class="line"><span style="color: #F8F8F2">    &gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      {item}</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #FF79C6">li</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  {</span><span style="color: #FF79C6">/each</span><span style="color: #F8F8F2">}</span></span>
+<span class="line"><span style="color: #F8F8F2">&lt;/</span><span style="color: #FF79C6">ul</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span></code></pre><!-- HTML_TAG_END --></div>
+  <div class="without svelte-1k6c2ck"><h3 class="svelte-1k6c2ck">Without likftc</h3>
+    <div class="demo svelte-1k6c2ck"><div slot="without"></div>
+      <button class="svelte-1k6c2ck"><svg width="1em" height="1em" viewBox="0 0 24 24"><path d="M4.996 5h5v5h-1V6.493a6.502 6.502 0 0 0 2.504 12.5a6.5 6.5 0 0 0 1.496-12.827V5.142A7.5 7.5 0 1 1 7.744 6H4.996V5z" fill="currentColor"></path></svg></button></div></div>
+  <div class="code code-without svelte-1k6c2ck"><!-- HTML_TAG_START --><pre class="shiki" style="background-color: #282A36"><code><span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #FF79C6">script</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">lang</span><span style="color: #FF79C6">=</span><span style="color: #F8F8F2">&quot;</span><span style="color: #50FA7B; font-style: italic">ts</span><span style="color: #F8F8F2">&quot;&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  import { flip } from &quot;svelte/animate&quot;;</span></span>
+<span class="line"><span style="color: #F8F8F2">  import { fade } from &quot;svelte/transition&quot;;</span></span>
+<span class="line"><span style="color: #F8F8F2">  import useFrame from &quot;./useFrame&quot;;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  const frame = useFrame();</span></span>
+<span class="line"><span style="color: #F8F8F2">&lt;/</span><span style="color: #FF79C6">script</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">&lt;</span><span style="color: #FF79C6">ul</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  {</span><span style="color: #FF79C6">#each</span><span style="color: #F8F8F2"> $frame </span><span style="color: #FF79C6">as</span><span style="color: #F8F8F2"> item (item)}</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #FF79C6">li</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #FF79C6">animate:</span><span style="color: #F8F8F2">flip</span><span style="color: #FF79C6">=</span><span style="color: #F1FA8C">{{</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">duration</span><span style="color: #F8F8F2">: 1000 }}</span></span>
+<span class="line"><span style="color: #F8F8F2">      </span><span style="color: #FF79C6">transition:</span><span style="color: #8BE9FD; font-style: italic">fade</span><span style="color: #F8F8F2">|</span><span style="color: #8BE9FD">local</span><span style="color: #FF79C6">=</span><span style="color: #F1FA8C">{{</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">duration</span><span style="color: #F8F8F2">: 1000 }}</span></span>
+<span class="line"><span style="color: #F8F8F2">    &gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      {item}</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #FF79C6">li</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  {</span><span style="color: #FF79C6">/each</span><span style="color: #F8F8F2">}</span></span>
+<span class="line"><span style="color: #F8F8F2">&lt;/</span><span style="color: #FF79C6">ul</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"></span></code></pre><!-- HTML_TAG_END --></div>
+</div></main></div>
+
+<footer class="svelte-12plu3j"><span>Copyright © 2022  
+    <a href="https://vdustr.github.io" target="_blank" rel="noopener noreferrer" class="svelte-12plu3j">ViPro</a>
+    .</span>
+</footer>
+
+</div>
+	</body>
+</html>

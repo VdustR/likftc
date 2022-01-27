@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "path": "packages/core"
+    },
+    {
+      "path": "packages/doc"
+    },
+    {
+      "name": "root",
+      "path": "."
+    }
+  ]
+}

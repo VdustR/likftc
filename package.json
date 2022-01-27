@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@types/prettier": "^2.4.3",
+    "@vdustr/likftc": "workspace:*",
+    "prettier": "^2.5.1"
+  }
+}

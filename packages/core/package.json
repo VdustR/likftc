@@ -1,0 +1,6 @@
+{
+  "name": "@vdustr/likftc",
+  "type": "module",
+  "main": "index.ts",
+  "private": true
+}

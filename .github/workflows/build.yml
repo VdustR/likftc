@@ -1,0 +1,64 @@
+name: NPM Publish
+
+on:
+  push:
+    tags:
+      - v*.*.*
+      - v*.*.*-*
+
+jobs:
+  container-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-pnpm-modules
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - uses: pnpm/action-setup@v1.2.1
+        with:
+          version: 5.14.3
+          run_install: true
+      - id: get_version
+        uses: battila7/get-version-action@v2
+      - name: Build
+        run: pnpm build
+
+      # for sponge
+      - name: Install moreutils
+        run: sudo apt-get install -y moreutils
+
+      - id: npm_tag
+        name: npm tag
+        run: |
+          [[ ${{ steps.get_version.outputs.prerelease }} ]] && echo '::set-output name=tag::experimental' || echo '::set-output name=tag::latest'
+      - name: version core
+        run: |
+          cd dist/core
+          jq ".version |= \"${{ steps.get_version.outputs.version-without-v }}\"" package.json | sponge package.json
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          tag: ${{ steps.npm_tag.outputs.tag }}
+          package: ./dist/core/package.json
+          access: public
+
+      - name: version react-flip-toolkit
+        run: |
+          cd dist/react-flip-toolkit
+          jq ".version |= \"${{ steps.get_version.outputs.version-without-v }}\"" package.json | sponge package.json
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          tag: ${{ steps.npm_tag.outputs.tag }}
+          package: ./dist/react-flip-toolkit/package.json
+          access: public

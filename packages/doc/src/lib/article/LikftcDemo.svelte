@@ -46,6 +46,7 @@
   $: {
     sync(frame);
   }
+  $: hideReplay = index < frames.length - 1;
 </script>
 
 <table class="demo">
@@ -71,7 +72,12 @@
       </ul>
     </td>
     <td rowspan={2}>
-      <button on:click={anime}>
+      <button
+        on:click={anime}
+        class:opacity-0={hideReplay}
+        class:pointer-events-none={hideReplay}
+        class:transition-all={true}
+      >
         {"Replay"}
       </button>
     </td>

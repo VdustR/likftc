@@ -25,7 +25,7 @@
       display: inline-block;
       background: white;
       color: black;
-      transition: transform ease 300ms;
+      transition: all ease 300ms;
 
       &:hover {
         transform: scale(1.2);

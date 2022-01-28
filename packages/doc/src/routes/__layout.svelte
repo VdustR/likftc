@@ -159,10 +159,14 @@
     }
   }
 
-  :global(pre),
   :global(code) {
     font-family: "Victor Mono", monospace;
-    font-size: 0.75rem;
+    font-size: 0.5em;
+  }
+
+  :global(pre) {
+    font-size: 1.2em;
+    line-height: 0.6em;
   }
 
   footer {

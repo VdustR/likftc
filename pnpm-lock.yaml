@@ -4,9 +4,12 @@ importers:
 
   .:
     specifiers:
+      '@likftc/core': workspace:*
+      '@likftc/react-flip-toolkit': workspace:*
       '@sveltejs/adapter-static': ^1.0.0-next.26
       '@sveltejs/kit': ^1.0.0-next.240
       '@sveltejs/vite-plugin-svelte': ^1.0.0-next.35
+      '@tsconfig/node16': ^1.0.2
       '@types/glob': ^7.2.0
       '@types/html-escaper': ^3.0.0
       '@types/lodash': ^4.14.178
@@ -17,7 +20,6 @@ importers:
       '@types/url-join': ^4.0.1
       '@typescript-eslint/eslint-plugin': ^4.31.1
       '@typescript-eslint/parser': ^4.31.1
-      '@vdustr/likftc': workspace:*
       '@vitejs/plugin-vue': ^2.1.0
       eslint: ^8.0.0
       eslint-config-prettier: ^8.3.0
@@ -47,9 +49,12 @@ importers:
       vue: ^3.2.29
       windicss: ^3.4.3
     dependencies:
+      '@likftc/core': link:packages/core
+      '@likftc/react-flip-toolkit': link:packages/react-flip-toolkit
       '@sveltejs/adapter-static': 1.0.0-next.26
       '@sveltejs/kit': 1.0.0-next.240_sass@1.49.0+svelte@3.46.2
       '@sveltejs/vite-plugin-svelte': 1.0.0-next.35_svelte@3.46.2
+      '@tsconfig/node16': 1.0.2
       '@types/glob': 7.2.0
       '@types/html-escaper': 3.0.0
       '@types/lodash': 4.14.178
@@ -60,7 +65,6 @@ importers:
       '@types/url-join': 4.0.1
       '@typescript-eslint/eslint-plugin': 4.33.0_402a8c5b5a1f299f4654290ac1452ffd
       '@typescript-eslint/parser': 4.33.0_eslint@8.7.0+typescript@4.5.5
-      '@vdustr/likftc': link:packages/core
       '@vitejs/plugin-vue': 2.1.0_vue@3.2.29
       eslint: 8.7.0
       eslint-config-prettier: 8.3.0_eslint@8.7.0
@@ -94,6 +98,9 @@ importers:
     specifiers: {}
 
   packages/doc:
+    specifiers: {}
+
+  packages/react-flip-toolkit:
     specifiers: {}
 
 packages:
@@ -1581,6 +1588,10 @@ packages:
       vite: 2.7.13_sass@1.49.0
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@tsconfig/node16/1.0.2:
+    resolution: {integrity: sha512-eZxlbI8GZscaGS7kkc/trHTT5xgrjH3/1n2JDwusC9iahPKWMRvRjJSAN5mCXviuTGQ/lHnhvv8Q1YTpnfz9gA==}
     dev: false
 
   /@types/glob/7.2.0:

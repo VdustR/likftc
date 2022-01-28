@@ -242,4 +242,5 @@ $RECYCLE.BIN/
 /packages/doc/package
 /packages/doc/.svelte-kit
 /packages/doc/src/lib/code/
+/dist/
 

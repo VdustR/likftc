@@ -1,8 +1,6 @@
 <script lang="ts" context="module">
   import { base } from "$app/paths";
-  import { page } from "$app/stores";
   import Link from "$lib/component/Nav.svelte";
-  import Likftc from "@vdustr/likftc";
   import "virtual:windi.css";
 
   const links = {
@@ -10,15 +8,6 @@
     vue: "Vue",
     react: "React",
   };
-
-  const likftc = Likftc();
-</script>
-
-<script lang="ts">
-  $: transitionArr = [$page.url.pathname];
-  $: {
-    likftc.sync(transitionArr);
-  }
 </script>
 
 <svelte:head>

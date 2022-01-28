@@ -1,10 +1,16 @@
 {
   "private": true,
   "type": "module",
+  "scripts": {
+    "build": "esmo script/build.ts"
+  },
   "dependencies": {
+    "@likftc/core": "workspace:*",
+    "@likftc/react-flip-toolkit": "workspace:*",
     "@sveltejs/adapter-static": "^1.0.0-next.26",
     "@sveltejs/kit": "^1.0.0-next.240",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.35",
+    "@tsconfig/node16": "^1.0.2",
     "@types/glob": "^7.2.0",
     "@types/html-escaper": "^3.0.0",
     "@types/lodash": "^4.14.178",
@@ -15,7 +21,6 @@
     "@types/url-join": "^4.0.1",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
-    "@vdustr/likftc": "workspace:*",
     "@vitejs/plugin-vue": "^2.1.0",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.3.0",

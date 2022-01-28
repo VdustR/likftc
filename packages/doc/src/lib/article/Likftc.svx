@@ -2,7 +2,7 @@
   import LikftcDemo from './LikftcDemo.svelte';
 </script>
 
-List item keys for FLIP transition component.
+List item keys for FLIP transition components.
 
 ## What is FLIP?
 

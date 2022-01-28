@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Likftc from "@vdustr/likftc";
+import Likftc from "@likftc/core";
 import { computed, watch } from "vue";
 import useFrame from "./useFrame";
 

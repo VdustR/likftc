@@ -1,7 +1,9 @@
-import Likftc from "@vdustr/likftc";
-import handleEnterUpdateDelete from "@vdustr/likftc/react-flip-toolkit/handleEnterUpdateDelete";
-import type { FlippedProps } from "@vdustr/likftc/react-flip-toolkit/useFlippedProps";
-import useFlippedProps from "@vdustr/likftc/react-flip-toolkit/useFlippedProps";
+import Likftc from "@likftc/core";
+import {
+  handleEnterUpdateDelete,
+  useFlippedProps,
+} from "@likftc/react-flip-toolkit";
+import type { FlippedProps } from "@likftc/react-flip-toolkit/useFlippedProps";
 import React, { ReactNode, useEffect, useMemo, useRef } from "react";
 import { Flipped, Flipper, spring } from "react-flip-toolkit";
 import useFrame from "./useFrame";

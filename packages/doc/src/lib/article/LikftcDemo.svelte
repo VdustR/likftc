@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Likftc from "@vdustr/likftc";
+  import Likftc from "@likftc/core";
   import { onDestroy, onMount } from "svelte";
   import { flip } from "svelte/animate";
   import { fade } from "svelte/transition";

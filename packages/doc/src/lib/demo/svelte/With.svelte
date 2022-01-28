@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Likftc from "@vdustr/likftc";
+  import Likftc from "@likftc/core";
   import { flip } from "svelte/animate";
   import { fade } from "svelte/transition";
   import useFrame from "./useFrame";

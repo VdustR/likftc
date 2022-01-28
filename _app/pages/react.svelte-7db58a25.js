@@ -1,59 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="description" content="" />
-		<link rel="icon" href="/likftc/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" data-svelte="svelte-1qzpree"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" data-svelte="svelte-1qzpree"><link href="https://fonts.googleapis.com/css2?family=Gidugu&display=swap" rel="stylesheet" data-svelte="svelte-1qzpree"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/victormono@latest/dist/index.min.css" data-svelte="svelte-1qzpree">
-	<link rel="stylesheet" href="/likftc/_app/assets/pages/__layout.svelte-ece05239.css">
-	<link rel="stylesheet" href="/likftc/_app/assets/Demo-93b36e28.css">
-	<link rel="modulepreload" href="/likftc/_app/start-97aa3985.js">
-	<link rel="modulepreload" href="/likftc/_app/chunks/vendor-074a1651.js">
-	<link rel="modulepreload" href="/likftc/_app/chunks/paths-4b3c6e7e.js">
-	<link rel="modulepreload" href="/likftc/_app/pages/__layout.svelte-39c37403.js">
-	<link rel="modulepreload" href="/likftc/_app/pages/react.svelte-7db58a25.js">
-	<link rel="modulepreload" href="/likftc/_app/chunks/index-1dc2c057.js">
-	<link rel="modulepreload" href="/likftc/_app/chunks/Demo-e3950ce5.js">
-			<script type="module">
-				import { start } from "/likftc/_app/start-97aa3985.js";
-				start({
-					target: document.querySelector("#svelte"),
-					paths: {"base":"/likftc","assets":"/likftc"},
-					session: {},
-					route: true,
-					spa: false,
-					trailing_slash: "never",
-					hydrate: {
-						status: 200,
-						error: null,
-						nodes: [
-							import("/likftc/_app/pages/__layout.svelte-39c37403.js"),
-						import("/likftc/_app/pages/react.svelte-7db58a25.js")
-						],
-						url: new URL("http://sveltekit-prerender/likftc/react"),
-						params: {}
-					}
-				});
-			</script>
-	</head>
-	<body>
-		<div id="svelte">
-
-
-
-
-<div class="outer svelte-16dc0ye"><nav class="svelte-16dc0ye"><a href="/likftc"><h1 class="svelte-16dc0ye">likftc</h1></a>
-    <ul class="svelte-16dc0ye"><li class="svelte-16dc0ye"><a href="/likftc/svelte/">Svelte</a>
-        </li><li class="svelte-16dc0ye"><a href="/likftc/vue/">Vue</a>
-        </li><li class="svelte-16dc0ye"><a href="/likftc/react/">React</a>
-        </li></ul></nav>
-  <main class="svelte-16dc0ye"><h1 class="mr-auto ml-auto mt-6 mb-4 text-size-3rem">React Demo</h1>
-
-<div class="grid svelte-1k6c2ck"><div class="with svelte-1k6c2ck"><h3 class="svelte-1k6c2ck">With likftc</h3>
-    <div class="demo svelte-1k6c2ck"><div slot="with"></div>
-      <button class="svelte-1k6c2ck"><svg width="1em" height="1em" viewBox="0 0 24 24"><path d="M4.996 5h5v5h-1V6.493a6.502 6.502 0 0 0 2.504 12.5a6.5 6.5 0 0 0 1.496-12.827V5.142A7.5 7.5 0 1 1 7.744 6H4.996V5z" fill="currentColor"></path></svg></button></div></div>
-  <div class="code code-with svelte-1k6c2ck"><!-- HTML_TAG_START --><pre class="shiki" style="background-color: #282A36"><code><span class="line"><span style="color: #FF79C6">import</span><span style="color: #F8F8F2"> Likftc </span><span style="color: #FF79C6">from</span><span style="color: #F8F8F2"> </span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">@likftc/core</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">;</span></span>
+var J=Object.defineProperty,O=Object.defineProperties;var V=Object.getOwnPropertyDescriptors;var D=Object.getOwnPropertySymbols;var z=Object.prototype.hasOwnProperty,G=Object.prototype.propertyIsEnumerable;var x=(l,s,a)=>s in l?J(l,s,{enumerable:!0,configurable:!0,writable:!0,value:a}):l[s]=a,A=(l,s)=>{for(var a in s||(s={}))z.call(s,a)&&x(l,a,s[a]);if(D)for(var a of D(s))G.call(s,a)&&x(l,a,s[a]);return l},v=(l,s)=>O(l,V(s));import{a7 as t,a8 as r,a9 as b,aa as M,ab as R,S as $,i as _,s as k,a2 as K,l as m,a3 as W,g as i,M as c,d as y,w as C,k as Q,x as d,m as X,y as h,q as E,o as g,B,v as Y,t as Z,h as ss,e as P,c as I,a as N,b as U,E as S,ac as j,a4 as L}from"../chunks/vendor-074a1651.js";import{L as ns,T as as}from"../chunks/index-1dc2c057.js";import{D as ls}from"../chunks/Demo-e3950ce5.js";const ps=200,T=[[1,2,3],[2,3,4],[3,4,1],[4,1,2],[4,3,2],[2,3,4]];function H(){const[l,s]=t.exports.useState(0),a=t.exports.useMemo(()=>T[l],[l]);return t.exports.useEffect(()=>{let n;function o(){!n||(clearInterval(n),n=null)}return n=setInterval(()=>{s(p=>{const e=p+1;return e>=T.length-1&&o(),e})},ps),()=>{o()}},[]),a}function os(){const l=H();return r.createElement(b,{flipKey:l.join(",")},r.createElement("ul",null,l.map(s=>r.createElement(M,{key:s,flipId:s},r.createElement("li",null,s)))))}const es=async({hideEnteringElements:l,animateEnteringElements:s,animateExitingElements:a,animateFlippedElements:n})=>{l(),n(),a(),s()},w=new WeakMap,q=new WeakMap;function ts({exit:l}={}){const s=t.exports.useCallback(p=>{const e=q.get(p);!e||(q.delete(p),R(v(A({},l),{onUpdate:F=>{l.onUpdate(p,F)},onComplete:()=>{var F;e(),(F=l.onComplete)==null||F.call(l)}})))},[l]),a=t.exports.useCallback(p=>{w.set(p,!0)},[]),n=t.exports.useCallback(p=>{w.delete(p),s(p)},[s]),o=t.exports.useCallback((p,e,F)=>{q.set(p,F),w.get(p)||s(p)},[s]);return t.exports.useMemo(()=>({onStart:a,onComplete:n,onExit:o}),[a,n,o])}const Fs=l=>{R({onUpdate:s=>{l.style.opacity=`${s}`}})};function cs(){const l=H(),{current:{get:s,sync:a}}=t.exports.useRef(ns(l));t.exports.useEffect(()=>{a(l)},[l]);const n=t.exports.useMemo(()=>JSON.stringify(l.map(p=>({key:p,mapKey:s(p)}))),[l,s]),o=ts({exit:t.exports.useMemo(()=>({onUpdate:(p,e)=>{p.style.opacity=`${1-Number(e)}`}}),[])});return r.createElement(b,{flipKey:n,handleEnterUpdateDelete:es},r.createElement("ul",null,l.map(p=>{const e=s(p);return r.createElement(M,A({key:e,flipId:e,onAppear:Fs},o),r.createElement("li",null,p))})))}function rs(l){let s,a=`<pre class="shiki" style="background-color: #282A36"><code><span class="line"><span style="color: #FF79C6">import</span><span style="color: #F8F8F2"> </span><span style="color: #FF79C6">type</span><span style="color: #F8F8F2"> { ReactNode } </span><span style="color: #FF79C6">from</span><span style="color: #F8F8F2"> </span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">react</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #FF79C6">import</span><span style="color: #F8F8F2"> React </span><span style="color: #FF79C6">from</span><span style="color: #F8F8F2"> </span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">react</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #FF79C6">import</span><span style="color: #F8F8F2"> { Flipped, Flipper } </span><span style="color: #FF79C6">from</span><span style="color: #F8F8F2"> </span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">react-flip-toolkit</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #FF79C6">import</span><span style="color: #F8F8F2"> useFrame </span><span style="color: #FF79C6">from</span><span style="color: #F8F8F2"> </span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">./useFrame</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">React;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF79C6">export</span><span style="color: #F8F8F2"> </span><span style="color: #FF79C6">default</span><span style="color: #F8F8F2"> </span><span style="color: #FF79C6">function</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B">With</span><span style="color: #F8F8F2">()</span><span style="color: #FF79C6">:</span><span style="color: #F8F8F2"> </span><span style="color: #8BE9FD; font-style: italic">ReactNode</span><span style="color: #F8F8F2"> {</span></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #FF79C6">const</span><span style="color: #F8F8F2"> frame </span><span style="color: #FF79C6">=</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B">useFrame</span><span style="color: #F8F8F2">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #FF79C6">return</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #8BE9FD; font-style: italic">Flipper</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">flipKey</span><span style="color: #FF79C6">=</span><span style="color: #F8F8F2">{frame.</span><span style="color: #50FA7B">join</span><span style="color: #F8F8F2">(</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">,</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">)}&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #FF79C6">ul</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        {frame.</span><span style="color: #50FA7B">map</span><span style="color: #F8F8F2">((</span><span style="color: #FFB86C; font-style: italic">item</span><span style="color: #F8F8F2">) </span><span style="color: #FF79C6">=&gt;</span><span style="color: #F8F8F2"> (</span></span>
+<span class="line"><span style="color: #F8F8F2">          &lt;</span><span style="color: #8BE9FD; font-style: italic">Flipped</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">key</span><span style="color: #FF79C6">=</span><span style="color: #F8F8F2">{item} </span><span style="color: #50FA7B; font-style: italic">flipId</span><span style="color: #FF79C6">=</span><span style="color: #F8F8F2">{item}&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">            &lt;</span><span style="color: #FF79C6">li</span><span style="color: #F8F8F2">&gt;{item}&lt;/</span><span style="color: #FF79C6">li</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">          &lt;/</span><span style="color: #8BE9FD; font-style: italic">Flipped</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">        ))}</span></span>
+<span class="line"><span style="color: #F8F8F2">      &lt;/</span><span style="color: #FF79C6">ul</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #8BE9FD; font-style: italic">Flipper</span><span style="color: #F8F8F2">&gt;</span></span>
+<span class="line"><span style="color: #F8F8F2">  );</span></span>
+<span class="line"><span style="color: #F8F8F2">}</span></span>
+<span class="line"></span></code></pre>`,n;return{c(){s=new K,n=m(),this.h()},l(o){s=W(o),n=m(),this.h()},h(){s.a=n},m(o,p){s.m(a,o,p),i(o,n,p)},p:c,i:c,o:c,d(o){o&&y(n),o&&s.d()}}}class ys extends ${constructor(s){super();_(this,s,null,rs,k,{})}}function is(l){let s,a=`<pre class="shiki" style="background-color: #282A36"><code><span class="line"><span style="color: #FF79C6">import</span><span style="color: #F8F8F2"> Likftc </span><span style="color: #FF79C6">from</span><span style="color: #F8F8F2"> </span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">@likftc/core</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">;</span></span>
 <span class="line"><span style="color: #FF79C6">import</span><span style="color: #F8F8F2"> {</span></span>
 <span class="line"><span style="color: #F8F8F2">  handleEnterUpdateDelete,</span></span>
 <span class="line"><span style="color: #F8F8F2">  useFlippedProps,</span></span>
@@ -68,7 +35,7 @@
 <span class="line"><span style="color: #FF79C6">const</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B">onAppear</span><span style="color: #FF79C6">:</span><span style="color: #F8F8F2"> </span><span style="color: #8BE9FD; font-style: italic">FlippedProps</span><span style="color: #F8F8F2">[</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">onAppear</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">] </span><span style="color: #FF79C6">=</span><span style="color: #F8F8F2"> (</span><span style="color: #FFB86C; font-style: italic">el</span><span style="color: #F8F8F2">) </span><span style="color: #FF79C6">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
 <span class="line"><span style="color: #F8F8F2">  </span><span style="color: #50FA7B">spring</span><span style="color: #F8F8F2">({</span></span>
 <span class="line"><span style="color: #F8F8F2">    </span><span style="color: #50FA7B">onUpdate</span><span style="color: #FF79C6">:</span><span style="color: #F8F8F2"> (</span><span style="color: #FFB86C; font-style: italic">val</span><span style="color: #F8F8F2">) </span><span style="color: #FF79C6">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
-<span class="line"><span style="color: #F8F8F2">      el.style.opacity </span><span style="color: #FF79C6">=</span><span style="color: #F8F8F2"> </span><span style="color: #F1FA8C">`</span><span style="color: #FF79C6">${</span><span style="color: #F8F8F2">val</span><span style="color: #FF79C6">}</span><span style="color: #F1FA8C">`</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #F8F8F2">      el.style.opacity </span><span style="color: #FF79C6">=</span><span style="color: #F8F8F2"> </span><span style="color: #F1FA8C">\`</span><span style="color: #FF79C6">\${</span><span style="color: #F8F8F2">val</span><span style="color: #FF79C6">}</span><span style="color: #F1FA8C">\`</span><span style="color: #F8F8F2">;</span></span>
 <span class="line"><span style="color: #F8F8F2">    },</span></span>
 <span class="line"><span style="color: #F8F8F2">  });</span></span>
 <span class="line"><span style="color: #F8F8F2">};</span></span>
@@ -97,7 +64,7 @@
 <span class="line"><span style="color: #F8F8F2">    exit</span><span style="color: #FF79C6">:</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B">useMemo</span><span style="color: #F8F8F2">&lt;</span><span style="color: #FFB86C; font-style: italic">NonNullable</span><span style="color: #F8F8F2">&lt;</span><span style="color: #FFB86C; font-style: italic">Parameters</span><span style="color: #F8F8F2">&lt;</span><span style="color: #FF79C6">typeof</span><span style="color: #F8F8F2"> useFlippedProps&gt;[</span><span style="color: #BD93F9">0</span><span style="color: #F8F8F2">][</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">exit</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">]&gt;&gt;(</span></span>
 <span class="line"><span style="color: #F8F8F2">      () </span><span style="color: #FF79C6">=&gt;</span><span style="color: #F8F8F2"> ({</span></span>
 <span class="line"><span style="color: #F8F8F2">        </span><span style="color: #50FA7B">onUpdate</span><span style="color: #FF79C6">:</span><span style="color: #F8F8F2"> (</span><span style="color: #FFB86C; font-style: italic">el</span><span style="color: #F8F8F2">, </span><span style="color: #FFB86C; font-style: italic">val</span><span style="color: #F8F8F2">) </span><span style="color: #FF79C6">=&gt;</span><span style="color: #F8F8F2"> {</span></span>
-<span class="line"><span style="color: #F8F8F2">          el.style.opacity </span><span style="color: #FF79C6">=</span><span style="color: #F8F8F2"> </span><span style="color: #F1FA8C">`</span><span style="color: #FF79C6">${</span><span style="color: #BD93F9">1</span><span style="color: #F1FA8C"> </span><span style="color: #FF79C6">-</span><span style="color: #F1FA8C"> </span><span style="color: #8BE9FD; font-style: italic">Number</span><span style="color: #F8F8F2">(val)</span><span style="color: #FF79C6">}</span><span style="color: #F1FA8C">`</span><span style="color: #F8F8F2">;</span></span>
+<span class="line"><span style="color: #F8F8F2">          el.style.opacity </span><span style="color: #FF79C6">=</span><span style="color: #F8F8F2"> </span><span style="color: #F1FA8C">\`</span><span style="color: #FF79C6">\${</span><span style="color: #BD93F9">1</span><span style="color: #F1FA8C"> </span><span style="color: #FF79C6">-</span><span style="color: #F1FA8C"> </span><span style="color: #8BE9FD; font-style: italic">Number</span><span style="color: #F8F8F2">(val)</span><span style="color: #FF79C6">}</span><span style="color: #F1FA8C">\`</span><span style="color: #F8F8F2">;</span></span>
 <span class="line"><span style="color: #F8F8F2">        },</span></span>
 <span class="line"><span style="color: #F8F8F2">      }),</span></span>
 <span class="line"><span style="color: #F8F8F2">      []</span></span>
@@ -127,40 +94,4 @@
 <span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #8BE9FD; font-style: italic">Flipper</span><span style="color: #F8F8F2">&gt;</span></span>
 <span class="line"><span style="color: #F8F8F2">  );</span></span>
 <span class="line"><span style="color: #F8F8F2">}</span></span>
-<span class="line"></span></code></pre><!-- HTML_TAG_END --></div>
-  <div class="without svelte-1k6c2ck"><h3 class="svelte-1k6c2ck">Without likftc</h3>
-    <div class="demo svelte-1k6c2ck"><div slot="without"></div>
-      <button class="svelte-1k6c2ck"><svg width="1em" height="1em" viewBox="0 0 24 24"><path d="M4.996 5h5v5h-1V6.493a6.502 6.502 0 0 0 2.504 12.5a6.5 6.5 0 0 0 1.496-12.827V5.142A7.5 7.5 0 1 1 7.744 6H4.996V5z" fill="currentColor"></path></svg></button></div></div>
-  <div class="code code-without svelte-1k6c2ck"><!-- HTML_TAG_START --><pre class="shiki" style="background-color: #282A36"><code><span class="line"><span style="color: #FF79C6">import</span><span style="color: #F8F8F2"> </span><span style="color: #FF79C6">type</span><span style="color: #F8F8F2"> { ReactNode } </span><span style="color: #FF79C6">from</span><span style="color: #F8F8F2"> </span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">react</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">;</span></span>
-<span class="line"><span style="color: #FF79C6">import</span><span style="color: #F8F8F2"> React </span><span style="color: #FF79C6">from</span><span style="color: #F8F8F2"> </span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">react</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">;</span></span>
-<span class="line"><span style="color: #FF79C6">import</span><span style="color: #F8F8F2"> { Flipped, Flipper } </span><span style="color: #FF79C6">from</span><span style="color: #F8F8F2"> </span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">react-flip-toolkit</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">;</span></span>
-<span class="line"><span style="color: #FF79C6">import</span><span style="color: #F8F8F2"> useFrame </span><span style="color: #FF79C6">from</span><span style="color: #F8F8F2"> </span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">./useFrame</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #F8F8F2">React;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #FF79C6">export</span><span style="color: #F8F8F2"> </span><span style="color: #FF79C6">default</span><span style="color: #F8F8F2"> </span><span style="color: #FF79C6">function</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B">With</span><span style="color: #F8F8F2">()</span><span style="color: #FF79C6">:</span><span style="color: #F8F8F2"> </span><span style="color: #8BE9FD; font-style: italic">ReactNode</span><span style="color: #F8F8F2"> {</span></span>
-<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #FF79C6">const</span><span style="color: #F8F8F2"> frame </span><span style="color: #FF79C6">=</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B">useFrame</span><span style="color: #F8F8F2">();</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #F8F8F2">  </span><span style="color: #FF79C6">return</span><span style="color: #F8F8F2"> (</span></span>
-<span class="line"><span style="color: #F8F8F2">    &lt;</span><span style="color: #8BE9FD; font-style: italic">Flipper</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">flipKey</span><span style="color: #FF79C6">=</span><span style="color: #F8F8F2">{frame.</span><span style="color: #50FA7B">join</span><span style="color: #F8F8F2">(</span><span style="color: #E9F284">&quot;</span><span style="color: #F1FA8C">,</span><span style="color: #E9F284">&quot;</span><span style="color: #F8F8F2">)}&gt;</span></span>
-<span class="line"><span style="color: #F8F8F2">      &lt;</span><span style="color: #FF79C6">ul</span><span style="color: #F8F8F2">&gt;</span></span>
-<span class="line"><span style="color: #F8F8F2">        {frame.</span><span style="color: #50FA7B">map</span><span style="color: #F8F8F2">((</span><span style="color: #FFB86C; font-style: italic">item</span><span style="color: #F8F8F2">) </span><span style="color: #FF79C6">=&gt;</span><span style="color: #F8F8F2"> (</span></span>
-<span class="line"><span style="color: #F8F8F2">          &lt;</span><span style="color: #8BE9FD; font-style: italic">Flipped</span><span style="color: #F8F8F2"> </span><span style="color: #50FA7B; font-style: italic">key</span><span style="color: #FF79C6">=</span><span style="color: #F8F8F2">{item} </span><span style="color: #50FA7B; font-style: italic">flipId</span><span style="color: #FF79C6">=</span><span style="color: #F8F8F2">{item}&gt;</span></span>
-<span class="line"><span style="color: #F8F8F2">            &lt;</span><span style="color: #FF79C6">li</span><span style="color: #F8F8F2">&gt;{item}&lt;/</span><span style="color: #FF79C6">li</span><span style="color: #F8F8F2">&gt;</span></span>
-<span class="line"><span style="color: #F8F8F2">          &lt;/</span><span style="color: #8BE9FD; font-style: italic">Flipped</span><span style="color: #F8F8F2">&gt;</span></span>
-<span class="line"><span style="color: #F8F8F2">        ))}</span></span>
-<span class="line"><span style="color: #F8F8F2">      &lt;/</span><span style="color: #FF79C6">ul</span><span style="color: #F8F8F2">&gt;</span></span>
-<span class="line"><span style="color: #F8F8F2">    &lt;/</span><span style="color: #8BE9FD; font-style: italic">Flipper</span><span style="color: #F8F8F2">&gt;</span></span>
-<span class="line"><span style="color: #F8F8F2">  );</span></span>
-<span class="line"><span style="color: #F8F8F2">}</span></span>
-<span class="line"></span></code></pre><!-- HTML_TAG_END --></div>
-</div></main></div>
-
-<footer class="svelte-16dc0ye"><span>Copyright © 2022  
-    <a href="https://vdustr.github.io" target="_blank" rel="noopener noreferrer" class="svelte-16dc0ye">ViPro</a>
-    .</span>
-</footer>
-
-</div>
-	</body>
-</html>
+<span class="line"></span></code></pre>`,n;return{c(){s=new K,n=m(),this.h()},l(o){s=W(o),n=m(),this.h()},h(){s.a=n},m(o,p){s.m(a,o,p),i(o,n,p)},p:c,i:c,o:c,d(o){o&&y(n),o&&s.d()}}}class us extends ${constructor(s){super();_(this,s,null,is,k,{})}}function fs(l){let s="React Demo",a;return{c(){a=Z(s)},l(n){a=ss(n,s)},m(n,o){i(n,a,o)},p:c,d(n){n&&y(a)}}}function ms(l){let s;return{c(){s=P("div"),this.h()},l(a){s=I(a,"DIV",{slot:!0}),N(s).forEach(y),this.h()},h(){U(s,"slot","with")},m(a,n){i(a,s,n),l[5](s)},p:c,d(a){a&&y(s),l[5](null)}}}function Cs(l){let s;return{c(){s=P("div"),this.h()},l(a){s=I(a,"DIV",{slot:!0}),N(s).forEach(y),this.h()},h(){U(s,"slot","without")},m(a,n){i(a,s,n),l[4](s)},p:c,d(a){a&&y(s),l[4](null)}}}function ds(l){let s,a;return s=new us({props:{slot:"code-with"}}),{c(){C(s.$$.fragment)},l(n){d(s.$$.fragment,n)},m(n,o){h(s,n,o),a=!0},p:c,i(n){a||(E(s.$$.fragment,n),a=!0)},o(n){g(s.$$.fragment,n),a=!1},d(n){B(s,n)}}}function hs(l){let s,a;return s=new ys({props:{slot:"code-without"}}),{c(){C(s.$$.fragment)},l(n){d(s.$$.fragment,n)},m(n,o){h(s,n,o),a=!0},p:c,i(n){a||(E(s.$$.fragment,n),a=!0)},o(n){g(s.$$.fragment,n),a=!1},d(n){B(s,n)}}}function Es(l){let s,a,n,o;return s=new as({props:{$$slots:{default:[fs]},$$scope:{ctx:l}}}),n=new ls({props:{$$slots:{"code-without":[hs],"code-with":[ds],without:[Cs],with:[ms]},$$scope:{ctx:l}}}),n.$on("refreshWith",l[2]),n.$on("refreshWithout",l[3]),{c(){C(s.$$.fragment),a=Q(),C(n.$$.fragment)},l(p){d(s.$$.fragment,p),a=X(p),d(n.$$.fragment,p)},m(p,e){h(s,p,e),i(p,a,e),h(n,p,e),o=!0},p(p,[e]){const F={};e&64&&(F.$$scope={dirty:e,ctx:p}),s.$set(F);const f={};e&67&&(f.$$scope={dirty:e,ctx:p}),n.$set(f)},i(p){o||(E(s.$$.fragment,p),E(n.$$.fragment,p),o=!0)},o(p){g(s.$$.fragment,p),g(n.$$.fragment,p),o=!1},d(p){B(s,p),p&&y(a),B(n,p)}}}const ks=!0;function gs(l,s,a){let n,o;async function p(){await S(),j.exports.render(t.exports.createElement(cs),n)}async function e(){await S(),j.exports.render(t.exports.createElement(os),o)}Y(()=>{p(),e()});function F(u){L[u?"unshift":"push"](()=>{o=u,a(1,o)})}function f(u){L[u?"unshift":"push"](()=>{n=u,a(0,n)})}return[n,o,p,e,F,f]}class ws extends ${constructor(s){super();_(this,s,gs,Es,k,{})}}export{ws as default,ks as prerender};

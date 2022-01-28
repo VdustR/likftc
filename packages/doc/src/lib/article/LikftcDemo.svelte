@@ -113,7 +113,7 @@
     ul {
       display: flex;
       gap: 0.25em;
-      width: 80px;
+      width: 36px;
       height: 30px;
       align-items: center;
       justify-content: center;

@@ -5,19 +5,11 @@ import mkdirp from "mkdirp";
 import { basename, dirname, extname, join, relative, resolve } from "path";
 import { getHighlighter } from "shiki";
 import { fileURLToPath } from "url";
+import htmlToSvelte from "./htmlToSvelte.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const demoDir = resolve(__dirname, "../src/lib/demo");
 const codeDir = resolve(__dirname, "../src/lib/code");
-
-/**
- * Copy from:
- *
- * https://github.com/VdustR/example-vite-svelte-markdown/blob/8c530c4/vite.config.js
- */
-function saveSvelteHtmlText(html: string) {
-  return `{@html \`${html.replace(/`/g, "\\`")}\`}`;
-}
 
 await (async () => {
   try {
@@ -38,7 +30,7 @@ await (async () => {
             highlighter.codeToHtml(code, {
               lang: extname(demoPath).substring(1),
             }),
-          saveSvelteHtmlText
+          htmlToSvelte
         )();
         await mkdirp(targetDir);
         await writeFile(targetPath, html, { encoding: "utf-8" });

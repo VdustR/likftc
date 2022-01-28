@@ -4,17 +4,12 @@ import adapter from "@sveltejs/adapter-static";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import vue from "@vitejs/plugin-vue";
 import { spawn } from "child_process";
+import { escape } from "html-escaper";
 import { mdsvex } from "mdsvex";
 import shiki from "shiki";
 import preprocess from "svelte-preprocess";
 import WindiCSS from "vite-plugin-windicss";
-
-/**
- * @param {string} html
- */
-function htmlToSvelte(html) {
-  return `{@html \`${html.replace(/`/g, "\\`")}\`}`;
-}
+import htmlToSvelte from "./script/htmlToSvelte.js";
 
 const processorGroup = mdsvex({
   highlight: {
@@ -29,7 +24,7 @@ const processorGroup = mdsvex({
         });
         return htmlToSvelte(highlighter.codeToHtml(code, { lang }));
       } else {
-        return "<pre><code>{`" + code.replace(/`/g, "\\`") + "`}</code></pre>";
+        return htmlToSvelte(`<pre><code>${escape(code)}</code></pre>`);
       }
     },
   },

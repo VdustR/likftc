@@ -6,7 +6,6 @@ importers:
     specifiers:
       '@babel/parser': ^7.17.0
       '@babel/traverse': ^7.17.0
-      '@betit/rollup-plugin-rename-extensions': ^0.1.0
       '@likftc/core': workspace:*
       '@likftc/react-flip-toolkit': workspace:*
       '@sveltejs/adapter-static': ^1.0.0-next.26
@@ -24,6 +23,7 @@ importers:
       '@types/url-join': ^4.0.1
       '@typescript-eslint/eslint-plugin': ^4.31.1
       '@typescript-eslint/parser': ^4.31.1
+      '@vdustr/rollup-plugin-rename-extensions': ^0.1.1
       '@vitejs/plugin-vue': ^2.1.0
       eslint: ^8.0.0
       eslint-config-prettier: ^8.3.0
@@ -58,7 +58,6 @@ importers:
     dependencies:
       '@babel/parser': 7.17.0
       '@babel/traverse': 7.17.0
-      '@betit/rollup-plugin-rename-extensions': 0.1.0
       '@likftc/core': link:packages/core
       '@likftc/react-flip-toolkit': link:packages/react-flip-toolkit
       '@sveltejs/adapter-static': 1.0.0-next.26
@@ -76,6 +75,7 @@ importers:
       '@types/url-join': 4.0.1
       '@typescript-eslint/eslint-plugin': 4.33.0_402a8c5b5a1f299f4654290ac1452ffd
       '@typescript-eslint/parser': 4.33.0_eslint@8.7.0+typescript@4.5.5
+      '@vdustr/rollup-plugin-rename-extensions': 0.1.1
       '@vitejs/plugin-vue': 2.1.0_vue@3.2.29
       eslint: 8.7.0
       eslint-config-prettier: 8.3.0_eslint@8.7.0
@@ -1442,17 +1442,6 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
-  /@betit/rollup-plugin-rename-extensions/0.1.0:
-    resolution: {integrity: sha512-ljSOXV2NshoBf1m+Xc/3WlrinaXK/ho4RL1E5GJ6/YZnJeQ2iDnBMWonaNEJ+DMrAwuZ4TcH47eR7rYbv25Nnw==}
-    dependencies:
-      '@babel/parser': 7.17.0
-      '@babel/traverse': 7.17.0
-      magic-string: 0.25.7
-      rollup-pluginutils: 2.8.2
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /@eslint/eslintrc/1.0.5:
     resolution: {integrity: sha512-BLxsnmK3KyPunz5wmCCpqy0YelEoxxGmH73Is+Z74oOTMtExcjkr3dDR6quwrjh1YspA8DH9gnX1o069KiS9AQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -1972,6 +1961,17 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.10.1
       eslint-visitor-keys: 3.2.0
+    dev: false
+
+  /@vdustr/rollup-plugin-rename-extensions/0.1.1:
+    resolution: {integrity: sha512-/5JPBsXFGwWf2/Fn4o6iPFAIJVPTnLWcgzgbyvl2D62UBFm8tVM6WxGbOc66+S/TPHHKZG+Q8eejvqdJ1sD74w==}
+    dependencies:
+      '@babel/parser': 7.17.0
+      '@babel/traverse': 7.17.0
+      magic-string: 0.25.7
+      rollup-pluginutils: 2.8.2
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@vitejs/plugin-vue/2.1.0_vue@3.2.29:

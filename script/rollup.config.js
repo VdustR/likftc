@@ -1,6 +1,6 @@
 // @ts-check
 
-import renameExtensions from "@betit/rollup-plugin-rename-extensions";
+import renameExtensions from "@vdustr/rollup-plugin-rename-extensions";
 import omit from "lodash/omit";
 import { resolve } from "path";
 import typescript from "rollup-plugin-typescript2";
@@ -42,6 +42,7 @@ function genConfig(pkg, module) {
         : [
             renameExtensions({
               include: ["**/*.ts"],
+              match: "\x00tslib.js",
               mappings: {
                 ".js": ".cjs",
               },

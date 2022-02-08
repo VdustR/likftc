@@ -2,7 +2,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "esmo script/build.ts"
+    "build:code": "rollup -c script/rollup.config.js",
+    "build:doc": "esmo script/build.ts",
+    "build": "pnpm build:code && pnpm build:doc"
   },
   "dependencies": {
     "@babel/parser": "^7.17.0",

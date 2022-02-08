@@ -33,9 +33,8 @@ function genConfig(pkg, module) {
           declaration: isEsm,
           declarationDir: ".",
           target: "ES5",
-          include: ["packages/**/*.ts"],
-          exclude: [],
         },
+        cwd: resolve(__dirname, "esm"),
       }),
       ...(isEsm
         ? []
@@ -52,12 +51,13 @@ function genConfig(pkg, module) {
   return config;
 }
 
-const configs = /** @type {import('./type').PKG[]} */
-(["core", "react-flip-toolkit"])
-  .map((pkg) =>
-    /** @type {import('./type').MODULE[]} */
-    (["ES2015", "COMMONJS"]).map((module) => genConfig(pkg, module))
-  )
-  .flat();
+const configs =
+  /** @type {import('./type').PKG[]} */
+  (["core", "react-flip-toolkit"])
+    .map((pkg) =>
+      /** @type {import('./type').MODULE[]} */
+      (["ES2015", "COMMONJS"]).map((module) => genConfig(pkg, module))
+    )
+    .flat();
 
 export default configs;

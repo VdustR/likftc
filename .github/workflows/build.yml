@@ -2,6 +2,8 @@ name: NPM Publish
 
 on:
   push:
+    branches:
+      - experimental
     tags:
       - v*.*.*
       - v*.*.*-*
@@ -29,36 +31,40 @@ jobs:
           version: 5.14.3
           run_install: true
       - id: get_version
-        uses: battila7/get-version-action@v2
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const sha = context.sha.substring(0, 7)
+            const branchName = context.ref.startsWith('refs/heads/') ? context.ref.substring('refs/heads/'.length) : ''
+            const version = branchName ? `0.0.0-${branchName}.${sha}` : context.ref.substring('refs/tags/v'.length)
+            const tag = branchName ? branchName : version.match(/^\d+\.\d+\.\d+$/) ? 'latest' : version.match(/^\d+\.\d+\.\d+-([\d\w]+)/)[1]
+            core.setOutput('version', version)
+            core.setOutput('tag', tag)
       - name: Build
         run: pnpm build
 
-      # for sponge
-      - name: Install moreutils
-        run: sudo apt-get install -y moreutils
-
-      - id: npm_tag
-        name: npm tag
-        run: |
-          [[ ${{ steps.get_version.outputs.prerelease }} ]] && echo '::set-output name=tag::experimental' || echo '::set-output name=tag::latest'
       - name: version core
         run: |
           cd dist/core
-          jq ".version |= \"${{ steps.get_version.outputs.version-without-v }}\"" package.json | sponge package.json
+          mv package.json package.json.tmp
+          jq ".version |= \"${{ steps.get_version.outputs.version }}\"" package.json.tmp > package.json
+          rm package.json.tmp
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
-          tag: ${{ steps.npm_tag.outputs.tag }}
+          tag: ${{ steps.get_version.outputs.tag }}
           package: ./dist/core/package.json
           access: public
 
       - name: version react-flip-toolkit
         run: |
           cd dist/react-flip-toolkit
-          jq ".version |= \"${{ steps.get_version.outputs.version-without-v }}\"" package.json | sponge package.json
+          mv package.json package.json.tmp
+          jq ".version |= \"${{ steps.get_version.outputs.version }}\"" package.json.tmp > package.json
+          rm package.json.tmp
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
-          tag: ${{ steps.npm_tag.outputs.tag }}
+          tag: ${{ steps.get_version.outputs.tag }}
           package: ./dist/react-flip-toolkit/package.json
           access: public

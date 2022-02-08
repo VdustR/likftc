@@ -11,13 +11,21 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const demoDir = resolve(__dirname, "../src/lib/demo");
 const codeDir = resolve(__dirname, "../src/lib/code");
 
+const langMap: Record<string, string> = {
+  ts: "typescript",
+};
+
+function getLang(lang: string) {
+  return langMap[lang] || lang;
+}
+
 await (async () => {
   try {
     const highlighter = await getHighlighter({
       theme: "dracula",
-      langs: ["svelte", "tsx", "vue"],
+      langs: ["svelte", "tsx", "vue", "typescript", "css"],
     });
-    const matches = glob.sync(join(demoDir, "*/{With,Without}.*"));
+    const matches = glob.sync(join(demoDir, "**/*.{svelte,tsx,vue,ts,css}"));
     matches.forEach(async (demoPath) => {
       try {
         const relativePath = relative(demoDir, demoPath);
@@ -28,7 +36,7 @@ await (async () => {
         const html = flow(
           () =>
             highlighter.codeToHtml(code, {
-              lang: extname(demoPath).substring(1),
+              lang: getLang(extname(demoPath).substring(1)),
             }),
           htmlToSvelte
         )();

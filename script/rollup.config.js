@@ -33,6 +33,7 @@ function genConfig(pkg, module) {
           declaration: isEsm,
           declarationDir: ".",
           target: "ES5",
+          include: [`../../packages/${pkg}/*.ts`],
         },
         cwd: resolve(__dirname, "esm"),
       }),

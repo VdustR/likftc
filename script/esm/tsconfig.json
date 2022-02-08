@@ -11,7 +11,5 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true
-  },
-  "include": ["../../packages/**/*.ts"],
-  "exclude": ["../../packages/doc/"]
+  }
 }

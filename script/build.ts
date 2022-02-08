@@ -62,12 +62,17 @@ await setPackage(PKG["react-flip-toolkit"], {
   readmeUrl: "react-flip-toolkit",
 });
 
-execFileSync("pnpm", [
-  "exec",
-  "rollup",
-  "-c",
-  resolve(__dirname, "rollup.config.js"),
-]);
+try {
+  execFileSync("pnpm", [
+    "exec",
+    "rollup",
+    "-c",
+    resolve(__dirname, "rollup.config.js"),
+  ]);
+} catch (e) {
+  console.trace(e);
+  throw e;
+}
 
 function getModuleName(str: string) {
   const pathArr = str.split("/");

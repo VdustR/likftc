@@ -28,7 +28,7 @@
   });
 </script>
 
-<Title>{"React Demo"}</Title>
+<Title>{"React FLIP Toolkit Demo"}</Title>
 
 <Demo on:refreshWith={renderWith} on:refreshWithout={renderWithout}>
   <div slot="with" bind:this={withEl} />

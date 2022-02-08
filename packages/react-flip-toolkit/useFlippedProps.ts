@@ -1,9 +1,7 @@
-import { ComponentProps, useCallback, useMemo } from "react";
-import type { Flipped } from "react-flip-toolkit";
+import type { SimpleSpringOptions } from "flip-toolkit/lib/Spring/types";
+import type { FlippedProps } from "flip-toolkit/lib/types";
+import { useCallback, useMemo } from "react";
 import { spring } from "react-flip-toolkit";
-
-export type SimpleSpringOptions = Parameters<typeof spring>[0];
-export type FlippedProps = ComponentProps<typeof Flipped>;
 
 export type SpringOptions = Omit<SimpleSpringOptions, "onUpdate"> & {
   onUpdate: (
@@ -28,22 +26,22 @@ export default function useFlippedProps({
       spring({
         ...exit,
         onUpdate: (val) => {
-          exit.onUpdate(el, val);
+          exit?.onUpdate(el, val);
         },
         onComplete: () => {
           removeElement();
-          exit.onComplete?.();
+          exit?.onComplete?.();
         },
       });
     },
     [exit]
   );
 
-  const onStart = useCallback<FlippedProps["onStart"]>((el) => {
+  const onStart = useCallback<NonNullable<FlippedProps["onStart"]>>((el) => {
     flipMap.set(el, true);
   }, []);
 
-  const onComplete = useCallback<FlippedProps["onComplete"]>(
+  const onComplete = useCallback<NonNullable<FlippedProps["onComplete"]>>(
     (el) => {
       flipMap.delete(el);
       removeElement(el);
@@ -51,7 +49,7 @@ export default function useFlippedProps({
     [removeElement]
   );
 
-  const onExit = useCallback<FlippedProps["onExit"]>(
+  const onExit = useCallback<NonNullable<FlippedProps["onExit"]>>(
     (el, _index, _removeElement) => {
       removeElementMap.set(el, _removeElement);
       if (!flipMap.get(el)) {

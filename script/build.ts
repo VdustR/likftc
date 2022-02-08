@@ -1,63 +1,30 @@
+import babelParser from "@babel/parser";
+import traverse from "@babel/traverse";
+import { execFileSync } from "child_process";
 import { copyFile, readFile, writeFile } from "fs/promises";
 import glob from "glob";
-import flow from "lodash/flow";
 import mkdirp from "mkdirp";
-import { dirname, relative, resolve } from "path";
-import ts from "typescript";
+import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
+import packageJson from "../package.json";
+import { PKG } from "./type";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const packagesDir = resolve(__dirname, "../packages");
-const sourceGlob = resolve(packagesDir, "{core,react-flip-toolkit}/**/*.ts");
 
 const targetDir = resolve(__dirname, "../dist");
 
-const tsFilePathArr = glob.sync(sourceGlob);
-
-async function compile(module: ts.ModuleKind = ts.ModuleKind.ES2015) {
-  const isEsm = module === ts.ModuleKind.ES2015;
-  await Promise.all(
-    tsFilePathArr.map(async (tsFilePath) => {
-      try {
-        const tsCode = await readFile(tsFilePath, "utf8");
-        const jsCode = ts.transpileModule(tsCode, {
-          compilerOptions: {
-            module,
-            declaration: isEsm,
-            target: ts.ScriptTarget.ES5,
-            importHelpers: true,
-            downlevelIteration: true,
-            esModuleInterop: true,
-          },
-        });
-        const relativePath = relative(packagesDir, tsFilePath);
-        const targetPath = flow(
-          () => resolve(targetDir, relativePath),
-          (path) => path.replace(/\.ts$/, isEsm ? ".js" : ".cjs")
-        )();
-        const targetFileDir = dirname(targetPath);
-        await mkdirp(targetFileDir);
-        await writeFile(targetPath, jsCode.outputText, { encoding: "utf8" });
-      } catch (err) {
-        console.trace(err);
-      }
-    })
-  );
-}
-
-await compile();
-await compile(ts.ModuleKind.CommonJS);
-
 async function setPackage(
-  packageName: string,
+  packageName: PKG,
   {
     readmeUrl = "",
   }: {
     readmeUrl?: string;
   } = {}
 ) {
-  return Promise.all([
+  await mkdirp(resolve(targetDir, packageName));
+  await Promise.all([
     copyFile(
       resolve(__dirname, "../LICENSE"),
       resolve(targetDir, packageName, "LICENSE")
@@ -90,5 +57,63 @@ async function setPackage(
   ]);
 }
 
-await setPackage("core");
-await setPackage("react-flip-toolkit", { readmeUrl: "react" });
+await setPackage(PKG.core);
+await setPackage(PKG["react-flip-toolkit"], {
+  readmeUrl: "react-flip-toolkit",
+});
+
+execFileSync("pnpm", [
+  "exec",
+  "rollup",
+  "-c",
+  resolve(__dirname, "rollup.config.js"),
+]);
+
+function getModuleName(str: string) {
+  const pathArr = str.split("/");
+  if (str.match(/^@/)) return `${pathArr[0]}/${pathArr[1]}`;
+  return pathArr[0];
+}
+
+function getVersion(moduleName: string) {
+  const version =
+    packageJson.dependencies[
+      moduleName as keyof typeof packageJson.dependencies
+    ];
+  if (!version) throw new Error(`${moduleName} is not found in package.json`);
+  return version;
+}
+
+async function setPeerDependencies(pkg: PKG) {
+  const files = glob.sync(resolve(targetDir, pkg, "**/*.js"));
+  const depsMap = new Map<string, string>();
+  await Promise.all(
+    files.map(async (file) => {
+      const jsCode = await readFile(file, "utf8");
+      const ast = babelParser.parse(jsCode, {
+        sourceType: "module",
+      });
+      (traverse as unknown as { default: typeof traverse }).default(ast, {
+        ImportDeclaration(path) {
+          const value = path.node.source.value;
+          if (value.match(/^\./)) return;
+          const moduleName = getModuleName(value);
+          if (depsMap.has(moduleName)) return;
+          depsMap.set(moduleName, getVersion(moduleName));
+        },
+      });
+    })
+  );
+  const depsEntries = [...depsMap.entries()];
+  if (depsEntries.length === 0) return;
+  const deps = Object.fromEntries(depsEntries);
+  const pkgPath = resolve(targetDir, pkg, "package.json");
+  const originalPkgContent = JSON.parse(await readFile(pkgPath, "utf8"));
+  const fixedPkgContent = { ...originalPkgContent, peerDependencies: deps };
+  await writeFile(pkgPath, JSON.stringify(fixedPkgContent, null, 2), {
+    encoding: "utf8",
+  });
+}
+
+await setPeerDependencies(PKG.core);
+await setPeerDependencies(PKG["react-flip-toolkit"]);

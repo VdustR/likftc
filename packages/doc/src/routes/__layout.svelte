@@ -6,7 +6,7 @@
   const links = {
     svelte: "Svelte",
     vue: "Vue",
-    react: "React",
+    "react-flip-toolkit": "React FLIP Toolkit",
   };
 </script>
 

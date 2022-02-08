@@ -1,7 +1,4 @@
-import type { ComponentProps } from "react";
-import type { Flipper } from "react-flip-toolkit";
-
-type FlipperProps = ComponentProps<typeof Flipper>;
+import type { FlipperProps } from "flip-toolkit/lib/types";
 
 const handleEnterUpdateDelete: FlipperProps["handleEnterUpdateDelete"] =
   async ({

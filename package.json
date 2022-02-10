@@ -2,7 +2,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:code": "rollup -c script/rollup.config.js",
+    "build:code": "rollup -c script/rollup.config.ts --configPlugin typescript",
     "build:doc": "esmo script/build.ts",
     "build": "pnpm build:code && pnpm build:doc"
   },
@@ -11,6 +11,7 @@
     "@babel/traverse": "^7.17.0",
     "@likftc/core": "workspace:*",
     "@likftc/react-flip-toolkit": "workspace:*",
+    "@rollup/plugin-typescript": "^8.3.0",
     "@sveltejs/adapter-static": "^1.0.0-next.26",
     "@sveltejs/kit": "^1.0.0-next.240",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.35",

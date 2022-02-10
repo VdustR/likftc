@@ -8,6 +8,7 @@ importers:
       '@babel/traverse': ^7.17.0
       '@likftc/core': workspace:*
       '@likftc/react-flip-toolkit': workspace:*
+      '@rollup/plugin-typescript': ^8.3.0
       '@sveltejs/adapter-static': ^1.0.0-next.26
       '@sveltejs/kit': ^1.0.0-next.240
       '@sveltejs/vite-plugin-svelte': ^1.0.0-next.35
@@ -60,6 +61,7 @@ importers:
       '@babel/traverse': 7.17.0
       '@likftc/core': link:packages/core
       '@likftc/react-flip-toolkit': link:packages/react-flip-toolkit
+      '@rollup/plugin-typescript': 8.3.0_86c7512d54e5fcf3b546877c26442da8
       '@sveltejs/adapter-static': 1.0.0-next.26
       '@sveltejs/kit': 1.0.0-next.240_sass@1.49.0+svelte@3.46.2
       '@sveltejs/vite-plugin-svelte': 1.0.0-next.35_svelte@3.46.2
@@ -1524,6 +1526,33 @@ packages:
     engines: {node: '>=8.0'}
     dev: false
 
+  /@rollup/plugin-typescript/8.3.0_86c7512d54e5fcf3b546877c26442da8:
+    resolution: {integrity: sha512-I5FpSvLbtAdwJ+naznv+B4sjXZUcIvLLceYpITAn7wAP8W0wqc5noLdGIp9HGVntNhRWXctwPYrSSFQxtl0FPA==}
+    engines: {node: '>=8.0.0'}
+    peerDependencies:
+      rollup: ^2.14.0
+      tslib: '*'
+      typescript: '>=3.7.0'
+    dependencies:
+      '@rollup/pluginutils': 3.1.0_rollup@2.67.1
+      resolve: 1.21.1
+      rollup: 2.67.1
+      tslib: 2.3.1
+      typescript: 4.5.5
+    dev: false
+
+  /@rollup/pluginutils/3.1.0_rollup@2.67.1:
+    resolution: {integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==}
+    engines: {node: '>= 8.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0
+    dependencies:
+      '@types/estree': 0.0.39
+      estree-walker: 1.0.1
+      picomatch: 2.3.1
+      rollup: 2.67.1
+    dev: false
+
   /@rollup/pluginutils/4.1.2:
     resolution: {integrity: sha512-ROn4qvkxP9SyPeHaf7uQC/GPFY6L/OWy9+bd9AwcjOAWQwxRscoEyAUD8qCY5o5iL4jqQwoLk2kaTKJPb/HwzQ==}
     engines: {node: '>= 8.0.0'}
@@ -1623,6 +1652,10 @@ packages:
     resolution: {integrity: sha512-K2waXdXBi2302XUdcHcR1jCeU0LL4TD9HRs/gk0N2Xvrht+G/BfJa4QObBQZfhMdxiCpV3COl5Nfq4uKTeTnJA==}
     dependencies:
       '@babel/types': 7.17.0
+    dev: false
+
+  /@types/estree/0.0.39:
+    resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
     dev: false
 
   /@types/glob/7.2.0:
@@ -3288,6 +3321,10 @@ packages:
 
   /estree-walker/0.6.1:
     resolution: {integrity: sha512-SqmZANLWS0mnatqbSfRP5g8OXZC12Fgg1IwNtLsyHDzJizORW4khDfjPqJZsemPWBB2uqykUah5YpQ6epsqC/w==}
+    dev: false
+
+  /estree-walker/1.0.1:
+    resolution: {integrity: sha512-1fMXF3YP4pZZVozF8j/ZLfvnR8NSIljt56UhbZ5PeeDmmGHpgpdwQt7ITlGvYaQukCvuBRMLEiKiYC+oeIg4cg==}
     dev: false
 
   /estree-walker/2.0.2:

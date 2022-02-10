@@ -1,17 +1,20 @@
-// @ts-check
-
 import renameExtensions from "@vdustr/rollup-plugin-rename-extensions";
 import omit from "lodash/omit";
 import { resolve } from "path";
 import typescript from "rollup-plugin-typescript2";
 import packageJson from "../package.json";
 
-/**
- * @param {import('./type').PKG} pkg
- * @param {import('./type').MODULE} module
- * @returns
- */
-function genConfig(pkg, module) {
+enum PKG {
+  "core" = "core",
+  "react-flip-toolkit" = "react-flip-toolkit",
+}
+
+enum MODULE {
+  "ES2015" = "ES2015",
+  "COMMONJS" = "COMMONJS",
+}
+
+function genConfig(pkg: PKG, module: MODULE) {
   const isEsm = module === "ES2015";
   /**
    * @type import('rollup').RollupOptions
@@ -53,13 +56,10 @@ function genConfig(pkg, module) {
   return config;
 }
 
-const configs =
-  /** @type {import('./type').PKG[]} */
-  (["core", "react-flip-toolkit"])
-    .map((pkg) =>
-      /** @type {import('./type').MODULE[]} */
-      (["ES2015", "COMMONJS"]).map((module) => genConfig(pkg, module))
-    )
-    .flat();
+const configs = (["core", "react-flip-toolkit"] as PKG[])
+  .map((pkg) =>
+    (["ES2015", "COMMONJS"] as MODULE[]).map((module) => genConfig(pkg, module))
+  )
+  .flat();
 
 export default configs;

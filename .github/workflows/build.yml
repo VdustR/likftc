@@ -42,29 +42,30 @@ jobs:
             core.setOutput('tag', tag)
       - name: Build
         run: pnpm build
+      - name: version
+        run: pnpm build:version ${{ steps.get_version.outputs.version }}
 
-      - name: version core
-        run: |
-          cd dist/core
-          mv package.json package.json.tmp
-          jq ".version |= \"${{ steps.get_version.outputs.version }}\"" package.json.tmp > package.json
-          rm package.json.tmp
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
           tag: ${{ steps.get_version.outputs.tag }}
           package: ./dist/core/package.json
           access: public
-
-      - name: version react-flip-toolkit
-        run: |
-          cd dist/react-flip-toolkit
-          mv package.json package.json.tmp
-          jq ".version |= \"${{ steps.get_version.outputs.version }}\"" package.json.tmp > package.json
-          rm package.json.tmp
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
           tag: ${{ steps.get_version.outputs.tag }}
-          package: ./dist/react-flip-toolkit/package.json
+          package: ./dist/react/package.json
+          access: public
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          tag: ${{ steps.get_version.outputs.tag }}
+          package: ./dist/svelte/package.json
+          access: public
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          tag: ${{ steps.get_version.outputs.tag }}
+          package: ./dist/vue/package.json
           access: public

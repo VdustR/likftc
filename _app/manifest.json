@@ -1,111 +1,114 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-4a8c3130.js",
+    "file": "start-753b59f1.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
-      "_vendor-25370d7c.js",
+      "_vendor-64951b7f.js",
       "_paths-4b3c6e7e.js"
     ],
     "dynamicImports": [
       "src/routes/__layout.svelte",
       ".svelte-kit/runtime/components/error.svelte",
       "src/routes/index.svelte",
-      "src/routes/react-flip-toolkit.svelte",
       "src/routes/svelte.svelte",
+      "src/routes/react.svelte",
       "src/routes/vue.svelte"
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-1127703e.js",
+    "file": "pages/__layout.svelte-07ab3b17.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-25370d7c.js",
+      "_vendor-64951b7f.js",
       "_paths-4b3c6e7e.js"
     ],
     "css": [
-      "assets/pages/__layout.svelte-ece05239.css"
+      "assets/pages/__layout.svelte-43cd037d.css"
     ]
   },
   ".svelte-kit/runtime/components/error.svelte": {
-    "file": "error.svelte-bc995d57.js",
+    "file": "error.svelte-08aa4849.js",
     "src": ".svelte-kit/runtime/components/error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-25370d7c.js"
+      "_vendor-64951b7f.js"
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-421ddcdd.js",
+    "file": "pages/index.svelte-f505b729.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-25370d7c.js",
-      "_index-65f0a92a.js"
+      "_vendor-64951b7f.js",
+      "_index-59f88ceb.js"
     ],
     "css": [
-      "assets/pages/index.svelte-e688dcf4.css"
-    ]
-  },
-  "src/routes/react-flip-toolkit.svelte": {
-    "file": "pages/react-flip-toolkit.svelte-eb7a78bf.js",
-    "src": "src/routes/react-flip-toolkit.svelte",
-    "isEntry": true,
-    "isDynamicEntry": true,
-    "imports": [
-      "_vendor-25370d7c.js",
-      "_index-65f0a92a.js",
-      "_Demo-607fbd3f.js"
+      "assets/pages/index.svelte-83d99d6b.css"
     ]
   },
   "src/routes/svelte.svelte": {
-    "file": "pages/svelte.svelte-21c56c47.js",
+    "file": "pages/svelte.svelte-ef31155b.js",
     "src": "src/routes/svelte.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-25370d7c.js",
-      "_index-65f0a92a.js",
-      "_Demo-607fbd3f.js"
+      "_vendor-64951b7f.js",
+      "_index-59f88ceb.js",
+      "_Demo-791c984f.js"
+    ]
+  },
+  "src/routes/react.svelte": {
+    "file": "pages/react.svelte-e2b39820.js",
+    "src": "src/routes/react.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-64951b7f.js",
+      "_index-59f88ceb.js",
+      "_Demo-791c984f.js"
+    ],
+    "css": [
+      "assets/pages/react.svelte-61709c64.css"
     ]
   },
   "src/routes/vue.svelte": {
-    "file": "pages/vue.svelte-b2916a8b.js",
+    "file": "pages/vue.svelte-ce250634.js",
     "src": "src/routes/vue.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-25370d7c.js",
-      "_index-65f0a92a.js",
-      "_Demo-607fbd3f.js"
+      "_vendor-64951b7f.js",
+      "_index-59f88ceb.js",
+      "_Demo-791c984f.js"
     ],
     "css": [
-      "assets/pages/vue.svelte-16a445ac.css"
+      "assets/pages/vue.svelte-09abe0f0.css"
     ]
   },
-  "_vendor-25370d7c.js": {
-    "file": "chunks/vendor-25370d7c.js"
+  "_vendor-64951b7f.js": {
+    "file": "chunks/vendor-64951b7f.js"
   },
   "_paths-4b3c6e7e.js": {
     "file": "chunks/paths-4b3c6e7e.js"
   },
-  "_index-65f0a92a.js": {
-    "file": "chunks/index-65f0a92a.js",
+  "_index-59f88ceb.js": {
+    "file": "chunks/index-59f88ceb.js",
     "imports": [
-      "_vendor-25370d7c.js"
+      "_vendor-64951b7f.js"
     ]
   },
-  "_Demo-607fbd3f.js": {
-    "file": "chunks/Demo-607fbd3f.js",
+  "_Demo-791c984f.js": {
+    "file": "chunks/Demo-791c984f.js",
     "imports": [
-      "_vendor-25370d7c.js"
+      "_vendor-64951b7f.js"
     ],
     "css": [
-      "assets/Demo-93b36e28.css"
+      "assets/Demo-baba221b.css"
     ]
   }
 }

@@ -2,6 +2,14 @@
   "name": "@likftc/svelte",
   "private": true,
   "description": "Likftc for Svelte.",
+  "homepage": "https://vdustr.dev/likftc/svelte",
+  "bugs": {
+    "url": "https://github.com/VdustR/likftc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VdustR/likftc.git"
+  },
   "license": "MIT",
   "author": {
     "name": "VdustR",

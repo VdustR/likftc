@@ -6,7 +6,7 @@
   const links = {
     svelte: "Svelte",
     vue: "Vue",
-    "react-flip-toolkit": "React FLIP Toolkit",
+    react: "React",
   };
 </script>
 
@@ -40,17 +40,11 @@
 </div>
 
 <footer>
-  <span
-    >{"Copyright © 2022  "}
-    <a
-      href="https://vdustr.github.io"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {"ViPro"}
-    </a>
-    {"."}
-  </span>
+  {"Copyright © 2022  "}
+  <a href="https://vdustr.dev" target="_blank" rel="noopener noreferrer">
+    {"ViPro"}
+  </a>
+  {"."}
 </footer>
 
 <style lang="scss">
@@ -84,6 +78,7 @@
   nav {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 0.5rem;
     --py: 2rem;
     --px: 1rem;
@@ -91,6 +86,7 @@
     padding-right: var(--px);
     padding-bottom: var(--py);
     padding-left: var(--px);
+    white-space: nowrap;
   }
 
   h1 {
@@ -106,6 +102,10 @@
   }
 
   ul {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 10rem;
     li {
       display: block;
       :global(a) {
@@ -117,28 +117,27 @@
         }
       }
     }
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-width: 10rem;
   }
 
   @media (max-width: 800px) {
     .outer {
       flex-direction: column;
-    }
 
-    nav {
-      --py: 0.5rem;
-      --px: 1rem;
-      flex-direction: row;
+      nav {
+        --py: 0.5rem;
+        --px: 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
     }
 
     ul {
       flex-direction: row;
       align-items: center;
       justify-content: flex-end;
-      gap: 1rem;
+      flex-wrap: wrap;
+      min-width: auto;
+      gap: 0.33rem;
       li {
         :global(a) {
           padding-left: 0.2em;
@@ -165,13 +164,36 @@
     padding: var(--py) var(--px);
     background: #121212;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     text-align: center;
+    gap: 0.2em;
+  }
 
-    a {
-      display: inline-block;
-      border-bottom: 1px white dashed;
+  :global(a),
+  :global(button) {
+    overflow: hidden;
+    --px: 0.25em;
+    padding-right: var(--px);
+    padding-left: var(--px);
+    --mx: 0.1em;
+    margin-right: var(--mx);
+    margin-left: var(--mx);
+    display: inline-block;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    transition: transform ease 300ms;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      z-index: 1;
+    }
+    &:active {
+      transform: scale(1.2);
+      z-index: 1;
     }
   }
 </style>

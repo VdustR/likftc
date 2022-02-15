@@ -1,7 +1,7 @@
 {
-  "name": "@likftc/core",
+  "name": "@likftc/react",
   "private": true,
-  "description": "List item keys for FLIP transition components.",
+  "description": "Spring options for React.",
   "license": "MIT",
   "author": {
     "name": "VdustR",

@@ -59,7 +59,8 @@
 
 <style lang="scss">
   button {
-    font-size: 3rem;
+    font-size: 1.5rem;
+    height: 100%;
     width: min-content;
     margin-left: auto;
     margin-right: auto;
@@ -70,27 +71,37 @@
     padding-top: var(--py);
     padding-bottom: var(--py);
     :global(svg) {
-      transition: transform ease-in-out 300ms;
+      transition: transform ease-in-out 100ms;
     }
-    &:hover :global(svg) {
-      transform: scale(1.2) rotate(360deg);
+    &:hover,
+    &:focus {
+      :global(svg) {
+        transform: scale(1.1) rotate(180deg);
+      }
+    }
+    &:active {
+      :global(svg) {
+        transform: scale(1.2) rotate(270deg);
+      }
     }
   }
   .grid {
     grid-template:
       "without with"
       "code-without code-with";
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50%;
     gap: 1rem;
     padding: 1rem;
   }
   .demo {
     display: flex;
     gap: 1rem;
-    align-items: stretch;
+    align-items: center;
     justify-content: stretch;
     border: 1px solid white;
     border-radius: 0.5rem;
+    overflow: hidden;
+    height: 3rem;
     > :global(div) {
       flex: 1;
     }
@@ -107,13 +118,11 @@
   .code-without {
     grid-area: code-without;
   }
-  .code {
-    overflow: auto;
-  }
   .code :global(pre) {
-    overflow: auto;
     width: 100%;
-    height: 100%;
+    position: sticky;
+    top: 0;
+    overflow: auto;
     border-radius: 0.5rem;
     --px: 0.5rem;
     --py: 1rem;
@@ -133,13 +142,12 @@
       gap: 2rem;
       justify-content: flex-start;
       align-items: center;
-      --padding-y: 0.5rem;
-      --padding-x: 2rem;
-      padding-top: var(--padding-y);
-      padding-right: var(--padding-x);
-      padding-bottom: var(--padding-y);
-      padding-left: var(--padding-x);
-      height: 4rem;
+      --py: 0.5rem;
+      --px: 2rem;
+      padding-top: var(--py);
+      padding-right: var(--px);
+      padding-bottom: var(--py);
+      padding-left: var(--px);
       overflow: hidden;
       font-size: 2rem;
     }
@@ -157,6 +165,7 @@
         "code-without"
         "with"
         "code-with";
+      grid-template-columns: 100%;
     }
   }
 </style>

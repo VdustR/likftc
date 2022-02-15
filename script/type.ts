@@ -1,6 +1,8 @@
 export enum PKG {
   "core" = "core",
-  "react-flip-toolkit" = "react-flip-toolkit",
+  "react" = "react",
+  "svelte" = "svelte",
+  "vue" = "vue",
 }
 export enum MODULE {
   "ES2015" = "ES2015",

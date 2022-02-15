@@ -1,18 +1,18 @@
 <script lang="ts">
   import { flip } from "svelte/animate";
   import { fade } from "svelte/transition";
-  import useFrame from "./useFrame";
-
-  const frame = useFrame();
+  import Frame from "./Frame.svelte";
 </script>
 
 <ul>
-  {#each $frame as item (item)}
-    <li
-      animate:flip={{ duration: 1000 }}
-      transition:fade|local={{ duration: 1000 }}
-    >
-      {item}
-    </li>
-  {/each}
+  <Frame let:frame>
+    {#each frame as item (item)}
+      <li
+        animate:flip={{ duration: 1000 }}
+        transition:fade|local={{ duration: 1000 }}
+      >
+        {item}
+      </li>
+    {/each}
+  </Frame>
 </ul>

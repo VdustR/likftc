@@ -13,3 +13,21 @@ List item keys for FLIP transition components.
 Frontend components use `key`s to know the related DOM. When a item is removed and append a new one with the same key before the transition of the older one end, it will reuse the same instance and the entering transition will conflict with the older exiting transition. `likftc` give a new key for the new item that make it use another instance to avoid the problem simply.
 
 <LikftcDemo />
+
+## Install
+
+```bash
+npm @likftc/core
+```
+
+## How It Works
+
+`Likftc` will generate an alternative key for your list items.
+
+## Usage
+
+Please check [Svelte](./svelte), [Vue](./vue), [React FILP Toolkit](./react-flip-toolkit) demo.
+
+## License
+
+[MIT](https://github.com/VdustR/likftc/blob/main/LICENSE)

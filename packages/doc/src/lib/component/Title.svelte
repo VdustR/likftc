@@ -1,3 +1,3 @@
-<h1 class="mr-auto ml-auto mt-6 mb-4 text-size-3rem">
+<h1 class="mx-auto mt-6 text-center mb-4 px-1 text-size-3rem">
   <slot />
 </h1>

@@ -6,30 +6,22 @@
   article {
     text-align: center;
     padding: 0 2rem;
+    max-width: 640px;
+    margin: auto;
 
     :global(img) {
       max-width: 100%;
+    }
+
+    :global(pre) {
+      width: max-content;
+      margin: auto;
     }
 
     :global(code) {
       --mx: 0.2em;
       margin-right: var(--mx);
       margin-left: var(--mx);
-    }
-
-    :global(a),
-    :global(button) {
-      --px: 0.25em;
-      padding-right: var(--px);
-      padding-left: var(--px);
-      display: inline-block;
-      background: white;
-      color: black;
-      transition: all ease 300ms;
-
-      &:hover {
-        transform: scale(1.2);
-      }
     }
   }
 </style>

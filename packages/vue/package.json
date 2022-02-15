@@ -1,12 +1,12 @@
 {
-  "name": "@likftc/react-flip-toolkit",
+  "name": "@likftc/vue",
   "private": true,
-  "description": "Spring options for React FLIP Toolkit.",
+  "description": "Spring options for Vue.",
   "license": "MIT",
   "author": {
     "name": "VdustR",
     "email": "vdustr@gmail.com",
-    "url": "https://vdustr.github.io"
+    "url": "https://vdustr.dev"
   },
   "type": "module",
   "main": "index.ts"

@@ -27,7 +27,7 @@
       "$lib/*": ["src/lib/*"]
     },
     "strict": true,
-    "jsx": "react-jsx"
+    "jsx": "react"
   },
   "include": [
     "src/**/*.d.ts",

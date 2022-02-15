@@ -1,23 +1,21 @@
 <script lang="ts">
-  import Likftc from "@likftc/core";
+  import Likftc from "@likftc/svelte";
   import { flip } from "svelte/animate";
   import { fade } from "svelte/transition";
-  import useFrame from "./useFrame";
-
-  let frame = useFrame();
-  const { get, sync } = Likftc($frame);
-  $: {
-    sync($frame);
-  }
+  import Frame from "./Frame.svelte";
 </script>
 
 <ul>
-  {#each $frame as item (get(item))}
-    <li
-      animate:flip={{ duration: 1000 }}
-      transition:fade|local={{ duration: 1000 }}
-    >
-      {item}
-    </li>
-  {/each}
+  <Frame let:frame>
+    <Likftc keys={frame} let:get>
+      {#each frame as item (get(item))}
+        <li
+          animate:flip={{ duration: 1000 }}
+          transition:fade|local={{ duration: 1000 }}
+        >
+          {item}
+        </li>
+      {/each}
+    </Likftc>
+  </Frame>
 </ul>

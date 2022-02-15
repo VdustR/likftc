@@ -1,11 +1,11 @@
 <script lang="ts" context="module">
   export const prerender = true;
-  import CodeWith from "$lib/code/react-flip-toolkit/With.svelte";
-  import CodeWithout from "$lib/code/react-flip-toolkit/Without.svelte";
+  import CodeWith from "$lib/code/react/With.svelte";
+  import CodeWithout from "$lib/code/react/Without.svelte";
   import Demo from "$lib/component/Demo.svelte";
   import Title from "$lib/component/Title.svelte";
-  import With from "$lib/demo/react-flip-toolkit/With";
-  import Without from "$lib/demo/react-flip-toolkit/Without";
+  import With from "$lib/demo/react/With";
+  import Without from "$lib/demo/react/Without";
   import { createElement } from "react";
   import { render } from "react-dom";
   import { onMount, tick } from "svelte";

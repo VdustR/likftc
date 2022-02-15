@@ -12,6 +12,6 @@
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
-    "sitemap": "svelte-sitemap --domain https://vdustr.github.io/likftc"
+    "sitemap": "svelte-sitemap --domain https://vdustr.dev/likftc"
   }
 }

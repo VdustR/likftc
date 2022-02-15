@@ -1,15 +1,17 @@
 import babelParser from "@babel/parser";
 import traverse from "@babel/traverse";
-import { execFileSync } from "child_process";
 import { copyFile, readFile, writeFile } from "fs/promises";
 import glob from "glob";
 import mkdirp from "mkdirp";
+import { createRequire } from "module";
 import { dirname, resolve } from "path";
+import { emitDts } from "svelte2tsx";
 import { fileURLToPath } from "url";
 import packageJson from "../package.json";
 import { PKG } from "./type";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const require = createRequire(import.meta.url);
 
 const packagesDir = resolve(__dirname, "../packages");
 
@@ -33,7 +35,7 @@ async function setPackage(
       resolve(targetDir, packageName, "README.md"),
       `# @likftc/${packageName}
   
-  Please check <https://vdustr.github.io/likftc/${readmeUrl}>.
+  Please check <https://vdustr.dev/likftc/${readmeUrl}>.
   `,
       { encoding: "utf8" }
     ).catch(console.trace),
@@ -57,10 +59,13 @@ async function setPackage(
   ]);
 }
 
-await setPackage(PKG.core);
-await setPackage(PKG["react-flip-toolkit"], {
-  readmeUrl: "react-flip-toolkit",
-});
+await Promise.all(
+  Object.values(PKG).map((pkg) =>
+    setPackage(pkg, {
+      readmeUrl: pkg === "core" ? undefined : pkg,
+    })
+  )
+);
 
 function getModuleName(str: string) {
   const pathArr = str.split("/");
@@ -108,5 +113,14 @@ async function setPeerDependencies(pkg: PKG) {
   });
 }
 
-await setPeerDependencies(PKG.core);
-await setPeerDependencies(PKG["react-flip-toolkit"]);
+await Promise.all(Object.values(PKG).map((pkg) => setPeerDependencies(pkg)));
+
+async function buildSvelteDts(pkg: PKG) {
+  await emitDts({
+    declarationDir: resolve(targetDir, pkg),
+    svelteShimsPath: require.resolve("svelte2tsx/svelte-shims.d.ts"),
+    libRoot: resolve(packagesDir, pkg),
+  });
+}
+
+await buildSvelteDts(PKG.svelte);

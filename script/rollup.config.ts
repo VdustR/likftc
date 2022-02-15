@@ -12,14 +12,14 @@ function genConfig(pkg: PKG, module: MODULE) {
   const isEsm = module === "ES2015";
   const isTyped = isEsm;
   const isSvelte = pkg === PKG.svelte;
-  const isTs = !isSvelte;
+  const isTs = true;
   const pkgDir = resolve(repoRoot, "packages", pkg);
   const distDir = resolve(repoRoot, "dist", pkg);
   /**
    * @type import('rollup').RollupOptions
    **/
   const config = {
-    input: resolve(pkgDir, isSvelte ? "index.svelte" : "index.ts"),
+    input: resolve(pkgDir, "index.ts"),
     output: {
       preserveModules: true,
       dir: distDir,

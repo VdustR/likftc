@@ -1,7 +1,7 @@
 {
   "name": "@likftc/svelte",
   "private": true,
-  "description": "Spring options for Svelte.",
+  "description": "Likftc for Svelte.",
   "license": "MIT",
   "author": {
     "name": "VdustR",

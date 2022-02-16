@@ -1,10 +1,10 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-753b59f1.js",
+    "file": "start-980c13cd.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
-      "_vendor-64951b7f.js",
+      "_vendor-01245463.js",
       "_paths-4b3c6e7e.js"
     ],
     "dynamicImports": [
@@ -17,95 +17,106 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-07ab3b17.js",
+    "file": "pages/__layout.svelte-9758f504.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-64951b7f.js",
+      "_vendor-01245463.js",
+      "_Logo-7fc30b09.js",
       "_paths-4b3c6e7e.js"
     ],
     "css": [
-      "assets/pages/__layout.svelte-43cd037d.css"
+      "assets/pages/__layout.svelte-e795011e.css"
     ]
   },
   ".svelte-kit/runtime/components/error.svelte": {
-    "file": "error.svelte-08aa4849.js",
+    "file": "error.svelte-cc6c7c6c.js",
     "src": ".svelte-kit/runtime/components/error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-64951b7f.js"
+      "_vendor-01245463.js"
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-f505b729.js",
+    "file": "pages/index.svelte-ae0b958b.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-64951b7f.js",
-      "_index-59f88ceb.js"
+      "_vendor-01245463.js",
+      "_Logo-7fc30b09.js",
+      "_index-c5dc1599.js"
     ],
     "css": [
-      "assets/pages/index.svelte-83d99d6b.css"
+      "assets/pages/index.svelte-f994a048.css"
     ]
   },
   "src/routes/svelte.svelte": {
-    "file": "pages/svelte.svelte-ef31155b.js",
+    "file": "pages/svelte.svelte-bb4d1c42.js",
     "src": "src/routes/svelte.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-64951b7f.js",
-      "_index-59f88ceb.js",
-      "_Demo-791c984f.js"
+      "_vendor-01245463.js",
+      "_index-c5dc1599.js",
+      "_Demo-4d48abb6.js"
     ]
   },
   "src/routes/react.svelte": {
-    "file": "pages/react.svelte-e2b39820.js",
+    "file": "pages/react.svelte-1c35d3dc.js",
     "src": "src/routes/react.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-64951b7f.js",
-      "_index-59f88ceb.js",
-      "_Demo-791c984f.js"
-    ],
-    "css": [
-      "assets/pages/react.svelte-61709c64.css"
+      "_vendor-01245463.js",
+      "_index-c5dc1599.js",
+      "_Demo-4d48abb6.js"
     ]
   },
   "src/routes/vue.svelte": {
-    "file": "pages/vue.svelte-ce250634.js",
+    "file": "pages/vue.svelte-3525f63b.js",
     "src": "src/routes/vue.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-64951b7f.js",
-      "_index-59f88ceb.js",
-      "_Demo-791c984f.js"
+      "_vendor-01245463.js",
+      "_index-c5dc1599.js",
+      "_Demo-4d48abb6.js"
     ],
     "css": [
-      "assets/pages/vue.svelte-09abe0f0.css"
+      "assets/pages/vue.svelte-170e52c3.css"
     ]
   },
-  "_vendor-64951b7f.js": {
-    "file": "chunks/vendor-64951b7f.js"
+  "_vendor-01245463.js": {
+    "file": "chunks/vendor-01245463.js"
   },
   "_paths-4b3c6e7e.js": {
     "file": "chunks/paths-4b3c6e7e.js"
   },
-  "_index-59f88ceb.js": {
-    "file": "chunks/index-59f88ceb.js",
+  "_Logo-7fc30b09.js": {
+    "file": "chunks/Logo-7fc30b09.js",
     "imports": [
-      "_vendor-64951b7f.js"
+      "_vendor-01245463.js"
+    ],
+    "css": [
+      "assets/Logo-9303e991.css"
     ]
   },
-  "_Demo-791c984f.js": {
-    "file": "chunks/Demo-791c984f.js",
+  "_index-c5dc1599.js": {
+    "file": "chunks/index-c5dc1599.js",
     "imports": [
-      "_vendor-64951b7f.js"
+      "_vendor-01245463.js"
+    ],
+    "css": [
+      "assets/index-6ca4a201.css"
+    ]
+  },
+  "_Demo-4d48abb6.js": {
+    "file": "chunks/Demo-4d48abb6.js",
+    "imports": [
+      "_vendor-01245463.js"
     ],
     "css": [
       "assets/Demo-baba221b.css"

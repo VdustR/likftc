@@ -1,6 +1,8 @@
 <script lang="ts" context="module">
   import { base } from "$app/paths";
   import Link from "$lib/component/Nav.svelte";
+  import Logo from "$lib/icon/Logo.svelte";
+  import "animate.css";
   import "virtual:windi.css";
 
   const links = {
@@ -25,7 +27,12 @@
 
 <div class="outer">
   <nav>
-    <a href={base || "/"}><h1>likftc</h1></a>
+    <a href={base || "/"}>
+      <h1>
+        <Logo />
+        {"likftc"}
+      </h1>
+    </a>
     <ul>
       {#each Object.entries(links) as [url, title]}
         <li>
@@ -64,6 +71,8 @@
     font-family: "Gidugu", sans-serif;
     font-size: 1.2rem;
     line-height: 1.2rem;
+
+    z-index: 0;
   }
 
   .outer {
@@ -87,6 +96,12 @@
     padding-bottom: var(--py);
     padding-left: var(--px);
     white-space: nowrap;
+    background: rgba(0, 0, 0, 0.3);
+
+    position: sticky;
+    top: 0;
+    height: min-content;
+    z-index: 1;
   }
 
   h1 {
@@ -98,6 +113,11 @@
     &:hover {
       background-color: white;
       color: black;
+    }
+    :global(svg) {
+      margin-right: 0.3em;
+      font-size: 1.2em;
+      display: inline;
     }
   }
 

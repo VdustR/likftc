@@ -1,7 +1,7 @@
 {
   "name": "@likftc/core",
   "private": true,
-  "description": "List item keys for FLIP transition components.",
+  "description": "List item keys for transition components.",
   "homepage": "https://vdustr.dev/likftc",
   "bugs": {
     "url": "https://github.com/VdustR/likftc/issues"

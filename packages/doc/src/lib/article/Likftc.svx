@@ -2,7 +2,7 @@
   import LikftcDemo from './LikftcDemo.svelte';
 </script>
 
-List item keys for FLIP transition components.
+List item keys for transition components.
 
 ## What is FLIP?
 
@@ -10,23 +10,40 @@ List item keys for FLIP transition components.
 
 ## Why `likftc`
 
-Frontend components use `key`s to know the related DOM. When a item is removed and append a new one with the same key before the transition of the older one end, it will reuse the same instance and the entering transition will conflict with the older exiting transition. `likftc` give a new key for the new item that make it use another instance to avoid the problem simply.
+Frontend components use `key`s to relate the DOM. When a item is removed and append a new one with the same key before the transition of the older one end, it will reuse the same instance and the entering transition might conflict with the older exiting one. `likftc` give a new key for the new item that make it use another instance to avoid the problem simply.
 
 <LikftcDemo />
 
-## Install
+## Setup
 
 ```bash
 npm @likftc/core
 ```
 
-## How It Works
-
-`Likftc` will generate an alternative key for your list items.
-
 ## Usage
 
-Please check [Svelte](./svelte), [Vue](./vue), [React FILP Toolkit](./react-flip-toolkit) demo.
+Please check [Svelte](./svelte), [Vue](./vue), [React](./react) usage.
+
+For advanced usage, you can customize the behavior you.
+
+```ts
+const { get, sync } = Likftc(keys, generator);
+
+// update your keys while your list changed
+sync(keys);
+
+// to get your key
+const altKey = get(key);
+```
+
+Types:
+
+```ts
+type keys = (string | number)[];
+type generator = (() => string | number) | undefined;
+```
+
+You can also check how it integrated with [Svelte](https://github.com/VdustR/likftc/tree/main/packages/svelte), [Vue](https://github.com/VdustR/likftc/tree/main/packages/vue), [React](https://github.com/VdustR/likftc/tree/main/packages/react).
 
 ## License
 

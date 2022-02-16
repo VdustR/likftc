@@ -1,8 +1,10 @@
 <script lang="ts" context="module">
-  export const prerender = true;
+  import Svelte from "$lib/article/Svelte.svx";
   import CodeWith from "$lib/code/svelte/With.svelte";
   import CodeWithout from "$lib/code/svelte/Without.svelte";
+  import Article from "$lib/component/Article.svelte";
   import Demo from "$lib/component/Demo.svelte";
+  import Seo from "$lib/component/Seo.svelte";
   import Title from "$lib/component/Title.svelte";
   import With from "$lib/demo/svelte/With.svelte";
   import Without from "$lib/demo/svelte/Without.svelte";
@@ -26,11 +28,23 @@
   });
 </script>
 
-<Title>{"Svelte Demo"}</Title>
+<Seo
+  title="Svelte"
+  description="List item keys for Svelte transition components."
+/>
+<Title>{"Svelte"}</Title>
 
-<Demo on:refreshWith={renderWith} on:refreshWithout={renderWithout}>
-  <div slot="with" bind:this={withEl} />
-  <div slot="without" bind:this={withoutEl} />
-  <CodeWith slot="code-with" />
-  <CodeWithout slot="code-without" />
-</Demo>
+<Article>
+  <Svelte>
+    <Demo
+      slot="demo"
+      on:refreshWith={renderWith}
+      on:refreshWithout={renderWithout}
+    >
+      <div slot="with" bind:this={withEl} />
+      <div slot="without" bind:this={withoutEl} />
+      <CodeWith slot="code-with" />
+      <CodeWithout slot="code-without" />
+    </Demo>
+  </Svelte>
+</Article>

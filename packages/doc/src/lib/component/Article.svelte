@@ -6,8 +6,14 @@
   article {
     text-align: center;
     padding: 0 2rem;
-    max-width: 640px;
     margin: auto;
+    width: 100%;
+
+    > :global(:not(.grid, img)) {
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     :global(img) {
       max-width: 100%;
@@ -16,12 +22,13 @@
     :global(pre) {
       width: max-content;
       margin: auto;
-    }
+      display: block;
+      text-align: left;
+      padding: 0.5em;
+      border-radius: 0.5em;
 
-    :global(code) {
-      --mx: 0.2em;
-      margin-right: var(--mx);
-      margin-left: var(--mx);
+      width: 100%;
+      overflow: auto;
     }
   }
 </style>

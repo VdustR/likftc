@@ -1,8 +1,10 @@
 <script lang="ts" context="module">
-  export const prerender = true;
+  import Vue from "$lib/article/Vue.svx";
   import CodeWith from "$lib/code/vue/With.svelte";
   import CodeWithout from "$lib/code/vue/Without.svelte";
+  import Article from "$lib/component/Article.svelte";
   import Demo from "$lib/component/Demo.svelte";
+  import Seo from "$lib/component/Seo.svelte";
   import Title from "$lib/component/Title.svelte";
   import With from "$lib/demo/vue/With.vue";
   import Without from "$lib/demo/vue/Without.vue";
@@ -27,11 +29,20 @@
   });
 </script>
 
-<Title>{"Vue Demo"}</Title>
+<Seo title="Vue" description="List item keys for Vue transition components." />
+<Title>{"Vue"}</Title>
 
-<Demo on:refreshWith={renderWith} on:refreshWithout={renderWithout}>
-  <div slot="with" bind:this={withEl} />
-  <div slot="without" bind:this={withoutEl} />
-  <CodeWith slot="code-with" />
-  <CodeWithout slot="code-without" />
-</Demo>
+<Article>
+  <Vue>
+    <Demo
+      slot="demo"
+      on:refreshWith={renderWith}
+      on:refreshWithout={renderWithout}
+    >
+      <div slot="with" bind:this={withEl} />
+      <div slot="without" bind:this={withoutEl} />
+      <CodeWith slot="code-with" />
+      <CodeWithout slot="code-without" />
+    </Demo>
+  </Vue>
+</Article>

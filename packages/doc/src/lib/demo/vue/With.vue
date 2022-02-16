@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import useLikftc from "@likftc/vue";
 import useFrame from "./useFrame";
+import { v4 } from "uuid";
 
 let frame = useFrame();
-const { get } = useLikftc(frame);
+const { get } = useLikftc(frame, v4);
 </script>
 
 <template>

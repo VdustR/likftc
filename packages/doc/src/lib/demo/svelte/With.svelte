@@ -2,12 +2,13 @@
   import Likftc from "@likftc/svelte";
   import { flip } from "svelte/animate";
   import { fade } from "svelte/transition";
+  import { v4 } from "uuid";
   import Frame from "./Frame.svelte";
 </script>
 
 <ul>
   <Frame let:frame>
-    <Likftc keys={frame} let:get>
+    <Likftc keys={frame} generator={v4} let:get>
       {#each frame as item (get(item))}
         <li
           animate:flip={{ duration: 1000 }}

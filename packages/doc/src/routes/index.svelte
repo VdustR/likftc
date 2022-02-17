@@ -19,7 +19,7 @@
   .logo {
     margin: 2em auto 0.5em;
     color: white;
-    > :global(svg) {
+    :global(svg) {
       max-width: 100%;
       width: 100px;
       min-width: 100px;

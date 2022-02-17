@@ -31,10 +31,10 @@
 </script>
 
 <Seo
-  title="React FLIP Toolkit"
+  title="React"
   description="List item keys for React transition components."
 />
-<Title>{"React FLIP Toolkit"}</Title>
+<Title>{"React"}</Title>
 
 <Article>
   <React>

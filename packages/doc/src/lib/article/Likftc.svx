@@ -1,5 +1,6 @@
 <script lang="ts">
   import LikftcDemo from './LikftcDemo.svelte';
+  import {base} from '$app/paths'
 </script>
 
 List item keys for transition components.
@@ -22,7 +23,7 @@ npm @likftc/core
 
 ## Usage
 
-Please check [Svelte](./svelte), [Vue](./vue), [React](./react) usage.
+Please check [Svelte]({base}/svelte), [Vue]({base}/vue), [React]({base}/react) usage.
 
 For advanced usage, you can customize the behavior you.
 

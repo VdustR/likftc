@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { base } from "$app/paths";
   import { page } from "$app/stores";
   import urljoin from "url-join";
 
@@ -9,7 +8,7 @@
     : `${title} | Likftc`;
   export let description = "List item keys for transition components.";
   const ogImage = "https://vdustr.dev/likftc/ogimage.png";
-  $: url = urljoin("https://vdustr.dev", base, $page.url.pathname);
+  $: url = urljoin("https://vdustr.dev", $page.url.pathname);
 </script>
 
 <svelte:head>

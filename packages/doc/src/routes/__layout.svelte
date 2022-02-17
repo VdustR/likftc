@@ -1,6 +1,7 @@
 <script lang="ts" context="module">
   import { base } from "$app/paths";
   import Link from "$lib/component/Nav.svelte";
+  import Github from "$lib/icon/Github.svelte";
   import Logo from "$lib/icon/Logo.svelte";
   import "animate.css";
   import "virtual:windi.css";
@@ -52,6 +53,14 @@
     {"ViPro"}
   </a>
   {"."}
+  <a
+    href="https://github.com/VdustR/likftc"
+    class="flex rounded-1 h-[1.5em] w-[1.5em] justify-center items-center"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Github />
+  </a>
 </footer>
 
 <style lang="scss">

@@ -46,6 +46,10 @@ type generator = (() => string | number) | undefined;
 
 You can also check how it integrated with [Svelte](https://github.com/VdustR/likftc/tree/main/packages/svelte), [Vue](https://github.com/VdustR/likftc/tree/main/packages/vue), [React](https://github.com/VdustR/likftc/tree/main/packages/react).
 
+## Additional Credits
+
+Icons from [Phosphor](https://github.com/phosphor-icons/phosphor-home).
+
 ## License
 
 [MIT](https://github.com/VdustR/likftc/blob/main/LICENSE)

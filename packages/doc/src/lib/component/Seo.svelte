@@ -3,7 +3,6 @@
   import { page } from "$app/stores";
   import urljoin from "url-join";
 
-  $: console.log(base, $page.url.pathname);
   export let title: string = "";
   $: _title = !title
     ? "Likftc - List Item Keys For Transition Components"

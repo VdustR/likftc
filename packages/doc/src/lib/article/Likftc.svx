@@ -18,7 +18,7 @@ Frontend components use `key`s to relate the DOM. When a item is removed and app
 ## Setup
 
 ```bash
-npm @likftc/core
+npm install @likftc/core
 ```
 
 ## Usage

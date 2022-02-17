@@ -1,10 +1,16 @@
 <script lang="ts">
+  import { base } from "$app/paths";
+  import { page } from "$app/stores";
+  import urljoin from "url-join";
+
+  $: console.log(base, $page.url.pathname);
   export let title: string = "";
   $: _title = !title
     ? "Likftc - List Item Keys For Transition Components"
     : `${title} | Likftc`;
   export let description = "List item keys for transition components.";
   const ogImage = "https://vdustr.dev/likftc/ogimage.png";
+  $: url = urljoin("https://vdustr.dev", base, $page.url.pathname);
 </script>
 
 <svelte:head>
@@ -13,4 +19,5 @@
   <meta property="og:title" content={_title} />
   <meta property="og:image" content={ogImage} />
   <meta property="og:description" content={description} />
+  <meta property="og:url" content={url} />
 </svelte:head>

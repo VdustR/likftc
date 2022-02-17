@@ -1,0 +1,1 @@
+const f=()=>Math.random().toString(16).substring(2);function i(r=[],o=f){let e=new Map(r.map(n=>[n,o()]));function s(n){const c=e.get(n);if(c)return c;const t=o();return e.set(n,t),t}function u(n){e.forEach((c,t)=>{n.includes(t)||e.delete(t)})}return{get:s,sync:u}}export{i as L};

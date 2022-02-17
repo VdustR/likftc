@@ -2,6 +2,18 @@
   "name": "@likftc/vue",
   "private": true,
   "description": "Likftc for Vue.",
+  "keywords": [
+    "animate",
+    "css",
+    "flip",
+    "javascript",
+    "likftc",
+    "move",
+    "spring",
+    "transition",
+    "typescript",
+    "vue"
+  ],
   "homepage": "https://vdustr.dev/likftc/vue",
   "bugs": {
     "url": "https://github.com/VdustR/likftc/issues"

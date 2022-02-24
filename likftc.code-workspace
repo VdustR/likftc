@@ -4,10 +4,16 @@
       "path": "packages/core"
     },
     {
-      "path": "packages/react-flip-toolkit"
+      "path": "packages/doc"
     },
     {
-      "path": "packages/doc"
+      "path": "packages/react"
+    },
+    {
+      "path": "packages/svelte"
+    },
+    {
+      "path": "packages/vue"
     },
     {
       "name": "root",

@@ -44,8 +44,10 @@ function genConfig(pkg: PKG, module: MODULE) {
               check: false,
               tsconfig: resolve(__dirname, "esm/tsconfig.json"),
               tsconfigOverride: {
+                compilerOptions: {
+                  declaration: isTyped,
+                },
                 module,
-                declaration: isTyped,
                 declarationDir: ".",
                 target: "ES5",
                 include: [

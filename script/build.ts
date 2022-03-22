@@ -46,6 +46,10 @@ async function setPackage(
         delete packageJson.private;
         packageJson.main = "index.cjs";
         packageJson.module = "index.js";
+        packageJson.exports = {
+          import: "./index.js",
+          require: "./index.cjs",
+        };
         return packageJson;
       })
       .then((packageJson) => {

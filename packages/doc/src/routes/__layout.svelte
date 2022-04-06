@@ -48,7 +48,7 @@
 </div>
 
 <footer>
-  {"Copyright © 2022  "}
+  {"Copyright © 2022 "}
   <a href="https://vdustr.dev" target="_blank" rel="noopener noreferrer">
     {"ViPro"}
   </a>
@@ -64,12 +64,20 @@
 </footer>
 
 <style lang="scss">
+  :root {
+    --bg: #282828;
+    --fg: #ebdbb2;
+    --dark-aqua: #689d6a;
+    --light-aqua: #8ec07c;
+    --dot-bg: url("data:image/svg+xml;base64;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2aWV3Qm94PSIwIDAgNCA0IiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIyIiBoZWlnaHQ9IjIiIHN0eWxlPSJmaWxsOiAjMDAwOyIvPgogIDxyZWN0IHdpZHRoPSIyIiBoZWlnaHQ9IjIiIHN0eWxlPSJmaWxsOiAjMDAwOyIgdHJhbnNmb3JtPSJtYXRyaXgoMSwgMCwgMCwgMSwgMiwgMikiLz4KPC9zdmc+");
+  }
+
   :global(html),
   :global(body),
   :global(#svelte),
   main {
-    background-color: black;
-    color: white;
+    background-color: var(--bg);
+    color: var(--fg);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -105,8 +113,6 @@
     padding-bottom: var(--py);
     padding-left: var(--px);
     white-space: nowrap;
-    background: rgba(0, 0, 0, 0.3);
-
     position: sticky;
     top: 0;
     height: min-content;
@@ -119,10 +125,6 @@
     padding-right: 0.1em;
     padding-left: 0.1em;
     padding-bottom: 0.1em;
-    &:hover {
-      background-color: white;
-      color: black;
-    }
     :global(svg) {
       margin-right: 0.3em;
       font-size: 1.2em;
@@ -137,13 +139,10 @@
     min-width: 10rem;
     li {
       display: block;
+      will-change: transform;
       :global(a) {
         display: block;
         padding-left: 0.5em;
-        &:hover {
-          background-color: white;
-          color: black;
-        }
       }
     }
   }
@@ -157,6 +156,7 @@
         --px: 1rem;
         flex-direction: row;
         flex-wrap: wrap;
+        background: var(--dot-bg);
       }
     }
 
@@ -191,7 +191,7 @@
     --px: 1rem;
     margin-top: 4rem;
     padding: var(--py) var(--px);
-    background: #121212;
+    background: var(--dot-bg);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -210,15 +210,18 @@
     margin-right: var(--mx);
     margin-left: var(--mx);
     display: inline-block;
-    background: white;
-    color: black;
-    border: 1px solid black;
+    border-radius: 8px;
+    background: var(--light-aqua);
+    color: var(--bg);
+    border: 1px solid var(--bg);
     transition: transform ease 300ms;
 
     &:hover,
     &:focus {
       transform: scale(1.1);
       z-index: 1;
+      background-color: var(--dark-aqua);
+      color: var(--fg);
     }
     &:active {
       transform: scale(1.2);

@@ -2,10 +2,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "pnpm build:code && pnpm build:doc",
     "build:code": "rollup -c script/rollup.config.ts --configPlugin typescript",
     "build:doc": "esmo script/build.ts",
-    "build:version": "esmo script/version.ts",
-    "build": "pnpm build:code && pnpm build:doc"
+    "build:version": "esmo script/version.ts"
   },
   "dependencies": {
     "@babel/parser": "^7.17.0",
@@ -69,5 +69,10 @@
     "vite-plugin-windicss": "^1.6.3",
     "vue": "^3.2.29",
     "windicss": "^3.4.3"
+  },
+  "packageManager": "pnpm@5.14.3",
+  "engines": {
+    "node": "14",
+    "pnpm": "5"
   }
 }

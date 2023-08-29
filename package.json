@@ -16,7 +16,7 @@
     "@likftc/vue": "workspace:*",
     "@rollup/plugin-typescript": "^8.3.0",
     "@sveltejs/adapter-static": "^1.0.0-next.26",
-    "@sveltejs/kit": "^1.0.0-next.240",
+    "@sveltejs/kit": "^1.15.2",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.35",
     "@tsconfig/node16": "^1.0.2",
     "@types/babel__traverse": "^7.14.2",
